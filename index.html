@@ -1,21 +1,23 @@
 <!--
-THESIS: Prove local craftsmanship through real job photography and calm
-precision, refusing the generic red-CTA-and-icon-soup contractor template.
-OWN-WORLD: Warm stone-neutral ground, near-black warm ink, one confident
-signal-red accent reserved for action and urgency; Space Grotesk display
-+ Inter body; large real photography, thin rules, no icon-circle soup,
-an asymmetric photo-led service index instead of uniform cards.
-STORY: Visitor sees a real Dordogne roof and the crew at height in the
-nacelle within the first screen; understands Alpha Bâtiment covers
-roofing + zinc + insulation + facades with the aerial platform
-as the safety/reach differentiator; calls or requests a devis.
-FIRST VIEWPORT: full-bleed real photo (nacelle reaching a Périgord house)
-right two-thirds, headline + proof + phone/devis CTA left third, thin nav
-above.
-FORM: canon (category standard) direction, chosen by the user over the
-rolled "coupe de toiture" blueprint direction (seed key cd0116cf) and its
-dealt challengers; executed at the craft bar of premium artisan/architect
-studio sites.
+THESIS: Prove local craftsmanship at a confident, modern trade-site register
+— the visitor should trust Alpha Bâtiment as fast as they would trust the
+best competitor site in the region, without losing the real photography.
+OWN-WORLD: Off-white ground, dark-navy ink, a teal/terracotta duo (teal =
+structure and calm, terracotta = action and urgency); Montserrat display
+(700/800) + Open Sans body; generously rounded icon-badge service cards,
+pill badges and buttons, a full-bleed photo hero with a navy-to-teal
+gradient overlay.
+STORY: Visitor lands on a real Dordogne roof photo under the brand's
+headline within the first screen, sees a truthful live open/closed badge
+and trust pills, understands the seven trades at a glance as icon cards,
+and calls or requests a devis.
+FIRST VIEWPORT: full-bleed photo hero (camion nacelle) with dark gradient
+overlay, live-status badge, headline + lede + devis/phone actions on top.
+FORM: user-pinned direction (brief beats the roll) — reference
+https://dt-couverture-33.fr, adopted for its palette/type/card/badge
+vocabulary only; every fact, stat, and testimonial stays Alpha Bâtiment's
+own, none borrowed from the reference. Prior canon build preserved on
+branch design-v1-canon-artisan.
 FINISH: unreviewed and undocumented is unfinished; this build ends with
 the finish review, the verdict, and DESIGN.md.
 -->
@@ -82,47 +84,52 @@ the finish review, the verdict, and DESIGN.md.
 
 <main id="main">
 
-  <section class="container hero">
-    <div class="hero__content">
-      <h1>Couvreur, zingueur en Dordogne.</h1>
-      <p class="lede">Alpha Bâtiment intervient à Pazayac et dans les environs de Brive-la-Gaillarde pour vos travaux de couverture, zinguerie, isolation et façades — avec un camion nacelle qui nous permet de travailler en hauteur sans échafaudage.</p>
-      <div class="hero__actions">
-        <a class="btn btn-primary" href="contact.html">
-          Demander un devis
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M13 5l7 7-7 7"/></svg>
-        </a>
-        <a class="hero__phone" href="tel:+33638961626">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 10.8c1.5 3 4.1 5.6 7.1 7.1l2.4-2.4a1 1 0 0 1 1-.25c1.2.35 2.5.55 3.9.55a1 1 0 0 1 1 1V20.5a1 1 0 0 1-1 1C10.6 21.5 2.5 13.4 2.5 3a1 1 0 0 1 1-1H6.9a1 1 0 0 1 1 1c0 1.4.2 2.7.55 3.9a1 1 0 0 1-.25 1L6.6 10.8Z"/></svg>
-          <span>
-            <span class="phone-number">06 38 96 16 26</span>
-            <span class="phone-caption">Une fuite en cours ? Appelez directement.</span>
-          </span>
-        </a>
+  <section class="hero">
+    <div class="hero__media">
+      <img src="assets/gallery/realisation-02.jpg" alt="Camion nacelle Alpha Bâtiment intervenant en hauteur sur une maison de maître en Dordogne" width="1600" height="1000" />
+    </div>
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <span class="live-badge" data-open-badge>
+          <span class="live-badge__dot"></span>
+          <span data-open-badge-text>Horaires en cours de chargement…</span>
+        </span>
+        <h1>Couvreur, zingueur en Dordogne.</h1>
+        <p class="lede">Alpha Bâtiment intervient à Pazayac et dans les environs de Brive-la-Gaillarde pour vos travaux de couverture, zinguerie, isolation et façades — avec un camion nacelle qui nous permet de travailler en hauteur sans échafaudage.</p>
+        <div class="hero__actions">
+          <a class="btn btn-primary" href="contact.html">
+            Demander un devis
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M13 5l7 7-7 7"/></svg>
+          </a>
+          <a class="hero__phone" href="tel:+33638961626">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 10.8c1.5 3 4.1 5.6 7.1 7.1l2.4-2.4a1 1 0 0 1 1-.25c1.2.35 2.5.55 3.9.55a1 1 0 0 1 1 1V20.5a1 1 0 0 1-1 1C10.6 21.5 2.5 13.4 2.5 3a1 1 0 0 1 1-1H6.9a1 1 0 0 1 1 1c0 1.4.2 2.7.55 3.9a1 1 0 0 1-.25 1L6.6 10.8Z"/></svg>
+            <span>
+              <span class="phone-number">06 38 96 16 26</span>
+              <span class="phone-caption">Une fuite en cours ? Appelez directement.</span>
+            </span>
+          </a>
+        </div>
       </div>
     </div>
-    <figure class="hero__media">
-      <img src="assets/gallery/realisation-02.jpg" alt="Camion nacelle Alpha Bâtiment intervenant en hauteur sur une maison de maître en Dordogne" width="1200" height="1500" />
-      <figcaption>Intervention en nacelle — Dordogne</figcaption>
-    </figure>
   </section>
 
   <section class="container">
     <div class="trust-strip reveal">
       <div class="trust-item">
-        <strong>Nacelle</strong>
-        <span>Travaux en hauteur sans échafaudage, plus rapides et plus sûrs.</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4v9a5 5 0 0 0 5 5h1"/><path d="M15.5 15.2c.6.6.9 1.3.9 2.1a2.4 2.4 0 0 1-4.8 0c0-1.4 2.4-3.8 2.4-3.8s1 1 1.5 1.7Z"/></svg>
+        <span>Camion nacelle</span>
       </div>
       <div class="trust-item">
-        <strong>4 métiers</strong>
-        <span>Couverture, zinguerie, isolation, façades — un seul interlocuteur.</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4.5"/><path d="M12 3.5 5 6v5.5c0 5 3 7.7 7 9 4-1.3 7-4 7-9V6l-7-2.5Z"/></svg>
+        <span>4 métiers, un interlocuteur</span>
       </div>
       <div class="trust-item">
-        <strong>Local</strong>
-        <span>Basé à Pazayac, nous connaissons le bâti et le climat du Périgord.</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.2"/></svg>
+        <span>Basés à Pazayac</span>
       </div>
       <div class="trust-item">
-        <strong>Lun–Sam</strong>
-        <span>8h–18h, avec une ligne dédiée aux urgences de toiture.</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M13 5l7 7-7 7"/></svg>
+        <span>Devis gratuit</span>
       </div>
     </div>
   </section>
@@ -136,68 +143,68 @@ the finish review, the verdict, and DESIGN.md.
       <a class="btn btn-ghost" href="prestations.html">Toutes les prestations</a>
     </div>
 
-    <a class="service-row service-row--urgent reveal" href="urgence-fuite-toiture.html">
-      <div class="service-row__media">
-        <img src="assets/gallery/realisation-05.jpg" alt="Toiture ouverte en cours de réparation d'urgence sur une maison en pierre" loading="lazy" />
-      </div>
-      <div class="service-row__body">
+    <div class="service-grid stagger-list">
+      <a class="service-card service-card--urgent" href="urgence-fuite-toiture.html">
+        <span class="service-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3.5 4 6 7.4 6 10.5A6 6 0 0 1 6 13.5C6 10.4 8.5 7 12 3Z"/></svg>
+        </span>
         <h3>Urgence fuite de toiture</h3>
         <p>Une infiltration, une tuile envolée après la tempête ? Nous intervenons pour bâcher, diagnostiquer et réparer.</p>
-      </div>
-      <span class="service-row__go">
-        Appeler maintenant
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M13 5l7 7-7 7"/></svg>
-      </span>
-    </a>
-
-    <div class="service-bento stagger-list">
-      <a class="service-tile service-tile--feature" href="travaux-de-couverture.html">
-        <img src="assets/gallery/realisation-03.jpg" alt="Pose de tuiles neuves sur une toiture en rénovation" loading="lazy" />
-        <div class="service-tile__body">
-          <h3>Travaux de couverture</h3>
-          <p>Réfection, rénovation et création de toitures, tuiles comme ardoises.</p>
-          <span class="service-tile__go">Découvrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span>
-        </div>
+        <span class="service-card__go">Appeler maintenant <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span>
       </a>
 
-      <a class="service-tile" href="travaux-de-zinguerie.html">
-        <img src="assets/services/zinguerie-detail.jpg" alt="Pose d'une gouttière en zinc en bordure de toiture" loading="lazy" />
-        <div class="service-tile__body">
-          <h3>Zinguerie</h3>
-          <span class="service-tile__go">Découvrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span>
-        </div>
+      <a class="service-card" href="travaux-de-couverture.html">
+        <span class="service-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13 12 5l9 8"/><path d="M5.5 12v7.5h13V12"/><path d="M9 19.5V15h6v4.5"/></svg>
+        </span>
+        <h3>Travaux de couverture</h3>
+        <p>Réfection, rénovation et création de toitures, tuiles comme ardoises.</p>
+        <span class="service-card__go">Découvrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span>
       </a>
 
-      <a class="service-tile" href="entretien-de-toiture.html">
-        <img src="assets/gallery/realisation-07.jpg" alt="Façade encrassée avant nettoyage et entretien" loading="lazy" />
-        <div class="service-tile__body">
-          <h3>Entretien de toiture</h3>
-          <span class="service-tile__go">Découvrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span>
-        </div>
+      <a class="service-card" href="travaux-de-zinguerie.html">
+        <span class="service-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16"/><path d="M6 7v2.5a2 2 0 0 0 4 0V7"/><path d="M14 7v2.5a2 2 0 0 0 4 0V7"/><path d="M12 12v6"/><path d="M9.5 16.5 12 19l2.5-2.5"/></svg>
+        </span>
+        <h3>Zinguerie</h3>
+        <p>Gouttières, chéneaux, solins et habillages métalliques posés avec précision.</p>
+        <span class="service-card__go">Découvrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span>
       </a>
 
-      <a class="service-tile" href="travaux-isolation.html">
-        <img src="assets/services/isolation-attic.jpg" alt="Pose d'isolant thermique sous une charpente" loading="lazy" />
-        <div class="service-tile__body">
-          <h3>Isolation</h3>
-          <span class="service-tile__go">Découvrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span>
-        </div>
+      <a class="service-card" href="entretien-de-toiture.html">
+        <span class="service-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20 14 10"/><path d="M13 9l1.5-1.5a2.1 2.1 0 0 1 3 3L16 12"/><path d="M19 5l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8Z"/></svg>
+        </span>
+        <h3>Entretien de toiture</h3>
+        <p>Nettoyage et contrôle pour repérer les faiblesses avant qu'elles ne deviennent des fuites.</p>
+        <span class="service-card__go">Découvrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span>
       </a>
 
-      <a class="service-tile" href="travaux-de-facades.html">
-        <img src="assets/gallery/realisation-09.jpg" alt="Façade d'une maison avant travaux de ravalement" loading="lazy" />
-        <div class="service-tile__body">
-          <h3>Façades</h3>
-          <span class="service-tile__go">Découvrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span>
-        </div>
+      <a class="service-card" href="travaux-isolation.html">
+        <span class="service-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="14" rx="1.5"/><path d="M7 8.5c1 1.2 2 1.2 3 0s2-1.2 3 0 2 1.2 3 0 2-1.2 3 0"/><path d="M7 13c1 1.2 2 1.2 3 0s2-1.2 3 0 2 1.2 3 0 2-1.2 3 0"/></svg>
+        </span>
+        <h3>Isolation</h3>
+        <p>Isolation des combles et rampants, souvent lors d'une réfection de toiture.</p>
+        <span class="service-card__go">Découvrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span>
       </a>
 
-      <a class="service-tile" href="pose-fenetre-de-toit.html">
-        <img src="assets/services/fenetre-toit.jpg" alt="Installation d'une fenêtre de toit sur une toiture en tuiles" loading="lazy" />
-        <div class="service-tile__body">
-          <h3>Fenêtre de toit</h3>
-          <span class="service-tile__go">Découvrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span>
-        </div>
+      <a class="service-card" href="travaux-de-facades.html">
+        <span class="service-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M4 10h16M4 15h16M10 4v6M15 10v5M9 15v5M16 15v5"/></svg>
+        </span>
+        <h3>Façades</h3>
+        <p>Ravalement et traitement de l'humidité, y compris sur les points hauts grâce à la nacelle.</p>
+        <span class="service-card__go">Découvrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span>
+      </a>
+
+      <a class="service-card" href="pose-fenetre-de-toit.html">
+        <span class="service-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17 12 6l9 11"/><rect x="9" y="12.5" width="6" height="6" rx="0.5"/><path d="M12 12.5v6M9 15.5h6"/></svg>
+        </span>
+        <h3>Fenêtre de toit</h3>
+        <p>Pose et remplacement, avec un soin particulier sur l'étanchéité du châssis.</p>
+        <span class="service-card__go">Découvrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span>
       </a>
     </div>
   </section>

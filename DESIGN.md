@@ -1,35 +1,40 @@
 ---
 name: Alpha Bâtiment
-description: Site vitrine multi-pages pour un artisan couvreur-zingueur en Dordogne, exécuté au niveau d'un studio d'architecte plutôt que d'un template d'entreprise du bâtiment.
+description: Site vitrine multi-pages pour un artisan couvreur-zingueur en Dordogne, dans le registre visuel moderne d'un site de couvreur professionnel — palette teal/terracotta, cartes à icône, badges pilule.
 colors:
-  stone-ground: "#f5f2ea"
-  stone-ground-deep: "#ece5d5"
-  warm-surface: "#fffdf9"
-  near-black-ink: "#21201c"
-  soft-ink: "#4a453c"
-  muted-ink: "#736b5c"
-  hairline: "#ddd3bd"
-  hairline-strong: "#c9bda0"
-  signal-red: "#b91f2c"
-  signal-red-deep: "#8c1620"
-  signal-red-tint: "#f7e6e2"
-  ink-inverse: "#f5f2ea"
+  off-white: "#f5f7f8"
+  bg-alt: "#eaf1f2"
+  surface: "#ffffff"
+  ink: "#1b2a30"
+  ink-soft: "#45565c"
+  ink-muted: "#6b7b82"
+  hairline: "#e3e8ea"
+  hairline-strong: "#c7d1d4"
+  ink-inverse: "#f5f7f8"
+  primary-teal: "#5a9ea6"
+  primary-teal-dark: "#437880"
+  primary-teal-lighter: "#e8f4f6"
+  accent-terracotta: "#d4883a"
+  accent-terracotta-dark: "#b8702c"
+  accent-terracotta-tint: "#fbeee0"
 typography:
   display:
-    fontFamily: "Space Grotesk, Inter, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(2.25rem, 1.4rem + 3.6vw, 4rem)"
-    fontWeight: 600
-    lineHeight: 1.08
+    fontFamily: "Montserrat, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "clamp(2.25rem, 1.4rem + 3.6vw, 3.75rem)"
+    fontWeight: 800
+    lineHeight: 1.12
     letterSpacing: "-0.02em"
   body:
-    fontFamily: "Inter, ui-sans-serif, system-ui, sans-serif"
+    fontFamily: "Open Sans, ui-sans-serif, system-ui, sans-serif"
     fontSize: "1rem"
     fontWeight: 400
     lineHeight: 1.55
     letterSpacing: "normal"
 rounded:
-  sm: "3px"
-  md: "6px"
+  sm: "0.3rem"
+  md: "0.55rem"
+  lg: "0.9rem"
+  xl: "1.25rem"
   pill: "999px"
 spacing:
   "1": "0.25rem"
@@ -44,164 +49,160 @@ spacing:
   "10": "8rem"
 components:
   button-primary:
-    backgroundColor: "{colors.signal-red}"
-    textColor: "#fff9f5"
-    rounded: "{rounded.md}"
-    padding: "0.85rem 1.5rem"
+    backgroundColor: "{colors.ink}"
+    textColor: "#ffffff"
+    rounded: "{rounded.lg}"
+    padding: "0.85rem 1.6rem"
   button-primary-hover:
-    backgroundColor: "{colors.signal-red-deep}"
-    textColor: "#fff9f5"
-    rounded: "{rounded.md}"
-    padding: "0.85rem 1.5rem"
-  button-ghost:
-    backgroundColor: "transparent"
-    textColor: "{colors.near-black-ink}"
-    rounded: "{rounded.md}"
-    padding: "0.85rem 1.5rem"
+    backgroundColor: "{colors.primary-teal-dark}"
+    textColor: "#ffffff"
+    rounded: "{rounded.lg}"
+    padding: "0.85rem 1.6rem"
+  button-inverse:
+    backgroundColor: "{colors.accent-terracotta}"
+    textColor: "#ffffff"
+    rounded: "{rounded.lg}"
+    padding: "0.85rem 1.6rem"
   phone-pill:
-    backgroundColor: "{colors.signal-red}"
-    textColor: "#fff9f5"
+    backgroundColor: "{colors.accent-terracotta}"
+    textColor: "#ffffff"
     rounded: "{rounded.pill}"
     padding: "0.6rem 1.05rem"
+  service-card:
+    backgroundColor: "{colors.surface}"
+    rounded: "{rounded.xl}"
+    border: "1px solid {colors.hairline}"
+    padding: "2rem 1.5rem"
 ---
 
 # Design System: Alpha Bâtiment
 
 ## Overview
 
-**Creative North Star: "The Architect's Site Visit"**
+**Creative North Star: "The Professional Roofer's Site" — user-pinned reference**
 
-Alpha Bâtiment is a multi-trade roofing, zinc-work, insulation and facade contractor in rural Dordogne, and the site is built to read like the portfolio site of a small architecture studio that happens to also fix roofs — not like a stock WordPress contractor template. The system trades icon-circle soup, gradient hero banners, and animated counters (the previous site's visual vocabulary) for a warm stone-neutral canvas, one confident signal-red reserved for action and urgency, generous negative space, and real, unstaged job-site photography treated as the primary evidence of craft.
+Alpha Bâtiment is a multi-trade roofing, zinc-work, insulation and facade contractor in rural Dordogne. This second design pass supersedes the first ("The Architect's Site Visit," preserved on branch `design-v1-canon-artisan`): the client pinned a concrete competitor reference, `https://dt-couverture-33.fr`, and asked the site to follow its visual world — a confident, modern trade-site register with a teal/terracotta palette, rounded icon-badge service cards, pill badges, and a full-bleed photo hero with a dark gradient overlay.
 
-The incumbent site (Elementor stock-photo template, icon grids, unset "+0" stat counters) is the explicit anti-reference. Every decision here pulls toward calm, factual trust — real photos, real coverage towns, one phone number always visible — rather than generic contractor-site trust theater.
+A brief-pinned reference beats any default aesthetic judgment: this system adopts the reference's palette, type pairing, radius scale, shadow language, and card/badge vocabulary. It does **not** adopt anything the reference site cannot prove for Alpha Bâtiment — there is no fabricated review score, no invented "years of experience" statistic, and no decorative "online now" indicator; the one live-status badge on the homepage is computed client-side from the business's real declared hours (Lun–Sam 8h–18h), never a static prop.
 
 **Key Characteristics:**
-- Warm stone-paper ground, near-black warm ink — never pure white or pure black.
-- One accent color (signal red) used exclusively for calls-to-action, urgency, and hover states; never decorative.
-- Space Grotesk display type paired with Inter body type: geometric confidence up top, high-legibility workhorse below.
-- Real job photography at large scale is the system's primary decoration; there is no stock photography and no icon-circle grid.
-- Thin 1px hairlines do the organizing work that shadows or card borders would do in a more decorative system.
+- Off-white paper ground, dark-navy ink — a calmer, cooler register than the previous stone-neutral system.
+- Two-color brand duo: **teal** (structure, calm, links, focus) and **terracotta** (action, urgency, every clickable CTA).
+- Montserrat (700/800) display paired with Open Sans body: a bold, geometric-grotesque headline voice over a highly legible workhorse body face.
+- Generously rounded corners everywhere (`--radius-lg`/`--radius-xl`, pill badges) — the previous system's tight 3–6px radius is gone.
+- Custom line icons (not a generic icon font) carry the seven-trade service grid, matching the reference's icon-badge card pattern without importing its unverifiable content.
 
 ## Colors
 
-The palette is a warm, sun-bleached stone family (paper, not white; ink, not black) with a single reserved red accent — a limestone-and-terracotta register that reads as Périgord vernacular rather than corporate.
+A teal-and-terracotta duo on an off-white/dark-navy neutral base — calmer and more "software product" than the previous warm-stone register, matching the pinned reference.
 
-### Primary
-- **Signal Red** (`#b91f2c`): the only accent color in the system. Used exclusively for primary buttons, the phone pill, active nav underlines, focus rings (as a tint), and the emergency/urgent service row. Its hover state is **Signal Red Deep** (`#8c1620`).
-- **Signal Red Tint** (`#f7e6e2`): pale wash of the primary, used only for focus-ring glow and form error backgrounds — never as a decorative fill.
+### Primary — Teal
+- **Primary Teal** (`#5a9ea6`): structural/calm color — nav underlines' resting state is transparent, but hover fills of dropdown items, form-focus rings, and icon badges on service/trust cards all use teal. Hover-darkens to **Primary Teal Dark** (`#437880`).
+- **Primary Teal Lighter** (`#e8f4f6`): tint used as the background for icon badges (service cards, trust pills) and dropdown-item hover — the "calm" surface tint.
+
+### Accent — Terracotta
+- **Accent Terracotta** (`#d4883a`): the single action color — every primary link color, the phone pill, the nav-link hover underline, the "urgent" service card's go-link, and `.btn-inverse` (the phone button on dark CTA banners). Hover-darkens to **Accent Terracotta Dark** (`#b8702c`).
+- **Accent Terracotta Tint** (`#fbeee0`): reserved for form error backgrounds only.
 
 ### Neutral
-- **Stone Ground** (`#f5f2ea`): default page background and the inverse text color on dark ink surfaces.
-- **Stone Ground Deep** (`#ece5d5`): alternate section background (`.section--alt`), used to separate rhythm between full-bleed sections without a hard border.
-- **Warm Surface** (`#fffdf9`): card and form-field background, slightly warmer/lighter than the page ground so surfaces lift without a shadow.
-- **Near-Black Ink** (`#21201c`): primary text color and the site's "dark" surface (header/footer/CTA-banner background) — always warm-black, never cool or pure `#000`.
-- **Soft Ink** (`#4a453c`): secondary text (lede paragraphs, body copy inside cards).
-- **Muted Ink** (`#736b5c`): tertiary text (breadcrumbs, captions, form notes).
-- **Hairline** (`#ddd3bd`) / **Hairline Strong** (`#c9bda0`): the two border weights. Hairline separates rows and sections; Hairline Strong outlines interactive borders (ghost buttons, inputs, coverage-town chips).
+- **Off-White** (`#f5f7f8`): default page background.
+- **BG Alt** (`#eaf1f2`): alternate section background (`.section--alt`), teal-tinted rather than the previous warm-beige tint.
+- **Surface** (`#ffffff`): pure white for cards, form fields, the sticky header — a cooler, cleaner surface than the old warm-paper tone.
+- **Ink** (`#1b2a30`): primary text color and every dark surface (header text on scroll, footer, CTA banner, hero overlay, `.btn-primary` resting state).
+- **Ink Soft** (`#45565c`) / **Ink Muted** (`#6b7b82`): secondary/tertiary text.
+- **Hairline** (`#e3e8ea`) / **Hairline Strong** (`#c7d1d4`): border weights.
 
 ### Named Rules
-**The One Red Rule.** Signal red appears only on things you can act on — a button, a phone number, an active nav state, a focus ring. It never appears as a background wash, a heading color, or a decorative flourish. If red shows up somewhere the visitor can't tap or call, it's a bug.
+**The Two-Color Rule.** Teal is calm and structural (it never asks for a click); terracotta is the only color that means "act here" (buttons, phone numbers, hover underlines, urgent states). If a non-interactive heading or block of text turns terracotta, that's a bug — use teal or ink instead.
 
 ## Typography
 
-**Display Font:** Space Grotesk (with Inter, ui-sans-serif, system-ui fallback)
-**Body Font:** Inter (with ui-sans-serif, system-ui fallback)
+**Display Font:** Montserrat (700 for H3/H4, 800 for H1/H2), self-hosted variable font.
+**Body Font:** Open Sans, self-hosted variable font.
 
-**Character:** Space Grotesk's squared geometry gives headlines a confident, architectural edge without tipping into trendy/quirky; Inter carries all reading text because it stays legible and neutral at small sizes on a phone screen in direct sunlight — a real constraint for this audience.
+**Character:** Montserrat's geometric grotesque forms at heavy weight read as confident and modern — the register the reference site and most competent trade sites share — while Open Sans stays a neutral, highly legible workhorse for reading text at small sizes.
 
 ### Hierarchy
-- **Display / H1** (600, `clamp(2.25rem, 1.4rem + 3.6vw, 4rem)`, line-height 1.08, letter-spacing -0.02em): page hero headline only, one per page.
-- **Headline / H2** (600, `clamp(1.75rem, 1.2rem + 2vw, 2.75rem)`, line-height 1.08): section titles ("Nos prestations", "Pourquoi Alpha Bâtiment").
-- **Title / H3** (600, `clamp(1.25rem, 1rem + 0.8vw, 1.5rem)`, line-height 1.08): service-row and card titles.
-- **Label / H4** (600, 1.0625rem, uppercase, letter-spacing 0.06em): reserved for footer column headings; not used as a page kicker/eyebrow anywhere (this system has no eyebrow labels — headings start directly with the H2).
-- **Lede** (400, `clamp(1.0625rem, 1rem + 0.3vw, 1.25rem)`, color Soft Ink, max-width 34rem): the one-paragraph standfirst under every H1/H2.
-- **Body** (400, 1rem, line-height 1.55, max-width 34rem): all running copy is measure-constrained to ~34rem (`--measure`) so paragraphs never stretch full-width even in wide containers.
-
-### Named Rules
-**The No-Eyebrow Rule.** Sections open straight into their H2; there is no small-caps kicker line above headings. It's a device the incumbent template overused, and removing it is part of what makes this read as edited rather than assembled from a builder.
+- **Display / H1** (800, `clamp(2.25rem, 1.4rem + 3.6vw, 3.75rem)`, line-height 1.12, letter-spacing -0.02em): page hero headline only, one per page, always white when set over the photo hero.
+- **Headline / H2** (800, `clamp(1.75rem, 1.2rem + 2vw, 2.5rem)`): section titles.
+- **Title / H3** (700, `clamp(1.2rem, 1rem + 0.6vw, 1.375rem)`): service-card and related-card titles.
+- **Label / H4** (700, 1.0625rem, uppercase, letter-spacing 0.06em): footer column headings only.
+- **Lede** (400, `clamp(1.0625rem, 1rem + 0.3vw, 1.25rem)`, color Ink Soft, max-width 34rem).
+- **Body** (400, 1rem, line-height 1.55, max-width 34rem).
 
 ## Layout
 
-The page runs on a single `.container` (max-width 76rem, 24px side padding, 16px under 640px) that every section reuses — no bleed-to-edge sections except the CTA banner and header/footer bands, which use full-width dark surfaces with the container nested inside.
+Unchanged from the previous system at the structural level: a single `.container` (max-width 76rem), the same spacing scale (`--space-1` … `--space-10`), and the same breakpoint set (900/820/720/640/560px). What changed is what fills the grid:
 
-Vertical rhythm is a spacing scale from `--space-1` (0.25rem) to `--space-10` (8rem), used consistently rather than one-off pixel values. Standard sections use `--space-9` (6rem) top/bottom padding, tightened to `--space-7` (3rem) for `.section--tight` and on viewports under 720px.
-
-Two habitual grid patterns carry most pages:
-- **Asymmetric two-up** (`1.05fr 1fr` or `1.1fr 1fr`): hero, proof section, detail-hero — text on one side, one large real photo on the other, collapsing to a single stacked column (photo first) under ~900/820px.
-- **Photo-led index row** (`.service-row`, grid `9.5rem 1fr auto`): a fixed-width thumbnail, flexible body text, and a trailing "Découvrir →" affordance, replacing the uniform icon-card grid of the incumbent site. Collapses to a single column with a full-width 11rem-tall photo under 720px.
-
-Breakpoints in practical use: 1200/1024 (container ceiling, implicit), 900px (nav becomes a slide-in drawer; hero/detail-hero/contact-layout stack), 820px (proof/coverage/related-services/footer-grid stack), 720px (service rows stack), 640px (form-grid stacks, container padding tightens), 560px (footer-grid drops to one column).
+- **Full-bleed photo hero** (new): the homepage hero is no longer a two-column text/photo split — the photo is a full-bleed background (`position:absolute; inset:0`) behind a navy-to-teal diagonal gradient (`linear-gradient(115deg, rgba(27,42,48,.96) 0%, rgba(27,42,48,.86) 45%, rgba(67,120,128,.62) 100%)`), with the headline, live-status badge, lede, and actions set in white on top, max-width 34rem, left-aligned.
+- **Service card grid** (`.service-grid`, replacing both the old Service Row list and the homepage bento): 4 columns → 2 → 1, each `.service-card` a `--radius-xl` white card with an icon badge, heading, one-line description, and a "Découvrir →" go-link. The urgent service (`.service-card--urgent`) is the same grid cell, just dark-ink, rather than a separate full-width banner — this is the reference's own convention (urgency is a card in the grid, not a special hero-adjacent slot).
+- **Trust pills** (`.trust-strip`/`.trust-item`, restyled): four small white pill badges with a teal icon chip, replacing the previous plain text row.
 
 ## Elevation & Depth
 
-This system is mostly flat: hairline borders (`--color-line` / `--color-line-strong`) do the separating work that shadows would do elsewhere. Shadows exist but are reserved for surfaces that visually "lift" off the page — sticky header excluded, that's a blur/tint, not a shadow.
+Shadows read cooler/navy-tinted now (`rgba(27,42,48,…)` instead of the old warm-brown `rgba(33,28,20,…)`), and hover lift is more pronounced to match the reference's `hover:-translate-y-1.5 hover:shadow-xl` service cards.
 
 ### Shadow Vocabulary
-- **Card** (`box-shadow: 0 1px 2px rgba(33,28,20,.05), 0 14px 32px -18px rgba(33,28,20,.28)`): resting elevation for the primary button and the proof-section photo — a soft, warm-tinted shadow (never pure black) that reads as "photograph on a desk," not "UI card."
-- **Lift** (`box-shadow: 0 2px 4px rgba(33,28,20,.08), 0 20px 40px -20px rgba(33,28,20,.35)`): hover state for buttons and the resting state of the hero photo and dropdown menu — the deliberately larger, softer shadow used for the system's few "important" floating surfaces.
-
-### Named Rules
-**The Hairline-Not-Shadow Rule.** Lists, rows, and section boundaries are separated with a 1px hairline (`--color-line`), never a card shadow. Shadows are reserved for the handful of surfaces that should feel like they're physically lifted (buttons on press/hover, the hero image, the nav dropdown) — using them everywhere would flatten their meaning.
+- **Card** (`0 1px 2px rgba(27,42,48,.06), 0 14px 32px -18px rgba(27,42,48,.22)`): resting elevation for the sticky header, trust pills, and the primary button.
+- **Lift** (`0 2px 4px rgba(27,42,48,.1), 0 22px 44px -20px rgba(27,42,48,.3)`): hover state for service cards (`translateY(-5px)`), related cards, buttons, and the resting hero-media/dropdown shadow.
 
 ## Shapes
 
-Corners are small and consistent: `--radius-sm` (3px) for tight elements (inputs, chips, skip-link), `--radius-md` (6px) for photos, cards, buttons, and banners, and a full `999px` pill exclusively for the phone number affordance and coverage-town chips. There is no large/soft "app" radius anywhere in the system — the restraint is deliberate, keeping photography and typography as the focal point rather than container chrome.
-
-Borders are always the hairline pair (`--color-line` at rest, `--color-line-strong` for interactive outlines like ghost buttons and form fields); there are no gradient borders or multi-color strokes.
+Corners are deliberately generous, matching the reference's rounded-2xl card language: `--radius-sm` (0.3rem) for inputs, `--radius-md` (0.55rem) for the phone pill's icon and small chips, `--radius-lg` (0.9rem) for buttons/related-cards/contact-card, `--radius-xl` (1.25rem) for service cards and the CTA banner, and `999px` pills for the phone number, trust badges, coverage-town chips, gallery tags, and the live-status badge.
 
 ## Components
 
 ### Buttons
-- **Shape:** `--radius-md` (6px), never pill-shaped except the dedicated phone pill.
-- **Primary:** Signal Red background, `#fff9f5` text, Card shadow at rest; on hover, background shifts to Signal Red Deep, the button lifts 1px (`translateY(-1px)`) and the shadow upgrades to Lift. This is the only button style with a resting shadow.
-- **Ghost:** transparent background, Hairline Strong border, Near-Black Ink text; hover darkens the border to Near-Black Ink and fills with Warm Surface. Used for secondary actions ("Toutes les prestations", "Voir toute la galerie").
-- **Inverse:** Stone Ground background / Near-Black Ink text, used only inside dark surfaces (the CTA banner's phone-number action) so it reads as a button against `--color-ink`, not a link.
-- **Phone Pill:** the one pill-shaped affordance in the system — Signal Red background, always paired with a phone icon, used in the header, hero, and every CTA banner so the emergency number is never more than a glance away on any page.
+- **Primary:** dark-ink background, white text, `--radius-lg`; hover shifts to Primary Teal Dark and lifts 1px. Inside the hero, the primary CTA is terracotta instead (`.hero__actions .btn-primary`), so the single most important action on the page is the accent color.
+- **Ghost:** transparent, Hairline Strong border; hover fills Primary Teal Lighter with a teal border/text — a calm secondary action, never terracotta.
+- **Inverse:** terracotta background, white text — used only on dark surfaces (the phone-number action inside every CTA banner), so it pops against `--color-ink`.
+- **Phone Pill:** terracotta, pill-shaped, phone icon, present in the header, hero, and every CTA banner.
+
+### Service Card (signature component)
+Replaces both the old photo-led Service Row and the homepage bento grid with one component used identically on the homepage and on `prestations.html`: a `--radius-xl` white card, a `3.1rem` icon badge (Primary Teal Lighter background, custom-drawn 24×24 line icon — never a generic icon-font glyph), an H3 title, a one-line truthful description, and a terracotta "Découvrir →" go-link that nudges right on hover. `.service-card--urgent` inverts to dark-ink with a rgba-white icon badge and a terracotta go-link — the grid's one heightened-urgency cell, no longer a separate banner above the grid.
+
+### Live Status Badge (new, signature)
+A pill badge (`rgba(255,255,255,.12)` on the hero photo, blurred) with a small pulsing dot, computed by `js/main.js` from the real declared hours (Lun–Sam 8h–18h) at page load — "Ouvert maintenant" with a green pinging dot, or "Fermé actuellement" with a static grey dot outside those hours. This is the one place the system borrows the reference's "live" feel; it never lies, because it reads the same hours printed in the footer.
+
+### Trust Pills
+Four small white pill badges below the hero (`.trust-strip`), each a teal icon chip plus a short label ("Camion nacelle", "4 métiers, un interlocuteur", "Basés à Pazayac", "Devis gratuit") — short, factual claims only, no borrowed stats.
 
 ### Cards / Containers
-- **Corner Style:** `--radius-md` (6px) uniformly.
-- **Background:** Warm Surface (`#fffdf9`) on the light ground, so cards read as "paper" slightly lighter than the page itself.
-- **Shadow Strategy:** related-service cards and contact cards are flat at rest (hairline border only) and gain the Card shadow plus a 2px lift only on hover — depth is a response to interaction, not a static decoration.
-- **Border:** 1px Hairline at rest on all cards.
-- **Internal Padding:** `--space-5`/`--space-6` (1.5–2rem).
+- **Related Card / Contact Card:** `--radius-lg`, Hairline border at rest, Lift shadow + `translateY(-3px)` on hover.
+- **Coverage town chips:** filled Primary Teal Lighter pills with Primary Teal Dark text (previously outlined neutral chips).
+- **Gallery tags:** a small dark-navy translucent pill (`rgba(27,42,48,.72)`, blurred) in the bottom-left corner of each `realisations.html` thumbnail, naming the real trade shown (Couverture / Zinguerie / Façades / Entretien / Nacelle) — the one piece of the reference's portfolio-card convention adopted, using only categories the photo actually shows.
 
 ### Inputs / Fields
-- **Style:** Hairline Strong 1px border, `--radius-sm` (3px), Warm Surface background.
-- **Focus:** border shifts to Signal Red plus a 3px Signal Red Tint glow (`box-shadow: 0 0 0 3px var(--color-red-tint)`) — the only place the red tint appears as a fill rather than a line.
-- **Error:** Signal Red Tint background with Signal Red Deep text (`.form-status.is-error`); success uses a separate, unrelated soft green (`#e7f2e5` / `#275c22`) since red is reserved for "needs attention," not simply "system message."
+- Hairline Strong border, `--radius-sm`, white background.
+- **Focus:** border shifts to Primary Teal plus a 3px Primary Teal Lighter glow — teal, not terracotta, because a focused field is a calm state, not a call to action.
 
 ### Navigation
-- **Style:** sticky header, translucent Stone Ground with backdrop-blur; nav links are Soft Ink at rest, Near-Black Ink with a 2px Signal Red underline on hover/active — never a background pill or full underline on rest state.
-- **Dropdown:** the "Prestations" submenu is a Lift-shadow panel revealed on hover/focus, Warm Surface background, appearing below the parent link.
-- **Mobile (<900px):** the nav link list and its dropdown collapse into a full-height slide-in drawer from the right (`transform: translateX(100%)` → `0`), triggered by a bordered icon button; the "Prestations" dropdown becomes a tap-to-expand accordion instead of hover.
-
-### Service Row (signature component)
-The photo-led index row is this system's replacement for the generic icon-card grid: a fixed 9.5×7rem photo thumbnail, service name + one-line description, and a trailing "Découvrir →" link where the arrow nudges right on row hover. One variant, `.service-row--urgent`, inverts to the dark Near-Black Ink surface with a bright coral go-link (`#ff8f8f`) — the system's only heightened-urgency treatment, reserved for the emergency-leak entry point at the top of the service list.
-
-### Service Showcase (homepage-only bento grid)
-The homepage trades the Service Row's uniform list for a single asymmetric photo grid — one large feature tile (Couverture, spanning 2×2) beside five smaller tiles, each a full-bleed real photo with a bottom gradient (`rgba(20,16,10,0) → rgba(20,16,10,.85)`) carrying the title and a "Découvrir →" link directly on the image. This is deliberately bolder than the Service Row it links onward to: fewer words, larger imagery, one clear visual hierarchy (Couverture first). It stays within the system's own vocabulary — same radius, same red-free go-link styling (white on photo instead of red-on-paper, since red stays reserved for true actions), same hover language (image scale + arrow nudge) — rather than inventing a new component family. `prestations.html` and every detail page keep the plain Service Row / Related Card as the exhaustive, scannable index; only the homepage gets the teaser treatment.
+- **Style:** sticky white header with a resting shadow (no more translucent blur-tint) — closer to the reference's solid `bg-white shadow-sm` header.
+- **Nav links:** an animated terracotta underline grows from the center on hover/active (`width: 0 → 60%`), replacing the previous static 2px border-bottom.
+- **Dropdown:** Lift-shadow panel, items hover to a Primary Teal Lighter background with Primary Teal Dark text.
+- **Mobile (<900px):** unchanged slide-in drawer behavior.
 
 ## Motion
 
-Motion is one authored focal moment plus quiet, consistent supporting reveals — never a scroll-triggered fade on every section.
+Unchanged in mechanism from the previous system — one authored hero entrance plus quiet supporting reveals — but the hero entrance now also staggers in the live-status badge as its own step.
 
-- **The focal moment:** on the homepage only, the hero content (headline, lede, actions) cascades in with a 3-step stagger and the hero photo settles from a slight zoom via `clip-path` + `scale`, both running once on page load. This is the site's one rehearsed entrance; no other section repeats it.
-- **Supporting reveal:** below-the-fold sections use `.reveal` (a single fade-up on scroll into view) or, for anything that reads as a list — service tiles, the gallery grid, related-service cards, partner logos — `.stagger-list`, which reveals each child on its own beat (capped around half a second of total spread) instead of moving the group as one block.
-- **Implementation rule:** `.stagger-list` animates with the `animation` property, never `transition`, specifically so it never collides with a component's own hover transition (e.g. Related Card's `transform` on hover) on the same element.
-- All motion respects `prefers-reduced-motion: reduce` (durations and delays collapse to near-zero site-wide).
+- **The focal moment:** homepage hero content (badge, headline, lede, actions) cascades in with a 5-step stagger (`hero-rise`), and the hero photo settles from a slight zoom (`hero-photo-settle`), both once on load.
+- **The live-badge pulse:** `.live-badge__dot::before` pings on a 1.8s loop when open; static when closed. Respects `prefers-reduced-motion`.
+- **Supporting reveal:** `.reveal` (single fade-up) and `.stagger-list` (per-child stagger, `animation` not `transition`) unchanged from the previous system.
+- All motion respects `prefers-reduced-motion: reduce`.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** use real, unstaged job-site photography at large scale as the primary visual interest of every section; treat photos as evidence, not filler.
-- **Do** keep Signal Red reserved for actionable elements only (buttons, phone numbers, active states, focus rings) — see the One Red Rule.
-- **Do** separate lists and rows with 1px hairlines rather than card shadows or backgrounds; reserve shadows for surfaces that should feel physically lifted.
-- **Do** keep body copy measure-constrained (~34rem) even inside wide containers, so paragraphs stay readable.
-- **Do** keep the phone number (as a pill or plain link) visible in the header and in every page's closing CTA — the emergency use case is real, not hypothetical.
+- **Do** keep terracotta reserved for things the visitor can act on (buttons, phone numbers, hover underlines, the urgent card) — see the Two-Color Rule.
+- **Do** keep every badge, stat, and status indicator computed from a real fact (the live-status badge from real hours, gallery tags from the real trade shown) — never a static prop borrowed from the reference site.
+- **Do** draw service-card icons in the site's own 24×24 line-icon grammar (`stroke-width:1.75`, round caps) rather than importing an icon font — the reference's icon-badge *pattern* is adopted, its specific icon set is not.
+- **Do** use real, unstaged job-site photography for the hero and gallery; the icon-card grid replaces photography only for the compact service index, not everywhere.
+- **Do** keep the phone number visible in the header and every CTA banner.
 
 ### Don't:
-- **Don't** introduce icon-circle grids, gradient hero banners, or animated counters — that is the incumbent template's vocabulary and the explicit anti-reference for this system.
-- **Don't** add a small-caps "eyebrow" kicker above headings; sections open directly into their H2 (see the No-Eyebrow Rule).
-- **Don't** use stock photography anywhere; if a real project photo doesn't exist for a slot, that slot gets a clearly-scoped generated image rather than a licensed stock substitute.
-- **Don't** invent statistics, testimonials, or certifications not confirmed by the business owner — the previous site's unset "+0" counters are a cautionary example, not a pattern to fill in.
-- **Don't** use pure black or pure white anywhere; every ink and ground value in this system carries a warm undertone.
+- **Don't** show a review score, star rating, or testimonial — none are verified for this business; the reference's Google-reviews widget is explicitly not reproduced.
+- **Don't** invent a "years in business" or project-count statistic; the reference's "10+ années d'expérience" has no equivalent here because it isn't confirmed.
+- **Don't** let the live-status badge become decorative — if the hours in `js/main.js` and the footer ever diverge, that's a bug, not a style choice.
+- **Don't** mix teal and terracotta on the same interactive element as if they were interchangeable accents; each has one job (calm vs. action).
+- **Don't** use pure black anywhere; the darkest surface is `--color-ink` (`#1b2a30`), always navy-warm, never `#000`.

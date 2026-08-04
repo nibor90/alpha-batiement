@@ -150,4 +150,24 @@
   document.querySelectorAll("[data-current-year]").forEach(function (el) {
     el.textContent = new Date().getFullYear();
   });
+
+  /* Live "ouvert / fermé" badge — computed from the real declared hours
+     (Lun-Sam 8h-18h, dimanche fermé), never a decorative fake indicator. */
+  var openBadges = document.querySelectorAll("[data-open-badge]");
+  if (openBadges.length) {
+    var now = new Date();
+    var day = now.getDay(); /* 0 = dimanche */
+    var hour = now.getHours();
+    var isOpen = day !== 0 && hour >= 8 && hour < 18;
+
+    openBadges.forEach(function (badge) {
+      var textEl = badge.querySelector("[data-open-badge-text]");
+      badge.classList.toggle("is-closed", !isOpen);
+      if (textEl) {
+        textEl.textContent = isOpen
+          ? "Ouvert maintenant · Lun–Sam 8h–18h"
+          : "Fermé actuellement · Lun–Sam 8h–18h";
+      }
+    });
+  }
 })();
