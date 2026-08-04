@@ -83,6 +83,7 @@ html {
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
+    animation-delay: 0s !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
@@ -549,6 +550,48 @@ p.wide {
   margin-bottom: var(--space-5);
 }
 
+/* The one authored focal moment: hero content cascades in on load,
+   the photo settles from a slight zoom. Everything else on the page
+   uses the quieter scroll-reveal below. */
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-photo-settle {
+  from {
+    clip-path: inset(0 0 9% 0);
+    transform: scale(1.07);
+  }
+  to {
+    clip-path: inset(0 0 0% 0);
+    transform: scale(1);
+  }
+}
+
+.hero__content > * {
+  opacity: 0;
+  animation: hero-rise 0.7s var(--ease-out) forwards;
+}
+
+.hero__content > *:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.hero__content > *:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.hero__content > *:nth-child(3) {
+  animation-delay: 0.36s;
+}
+
 .hero__actions {
   display: flex;
   align-items: center;
@@ -589,6 +632,7 @@ p.wide {
   overflow: hidden;
   aspect-ratio: 4 / 5;
   box-shadow: var(--shadow-lift);
+  animation: hero-photo-settle 1.1s var(--ease-out) both;
 }
 
 .hero__media img {
@@ -607,6 +651,8 @@ p.wide {
   color: #fff9f5;
   font-size: 0.85rem;
   font-weight: 500;
+  opacity: 0;
+  animation: hero-rise 0.6s var(--ease-out) 0.7s forwards;
 }
 
 @media (max-width: 900px) {
@@ -751,6 +797,126 @@ p.wide {
 
   .service-row__go {
     justify-self: start;
+  }
+}
+
+/* ---------- Service showcase (homepage bento grid) ---------- */
+.service-bento {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 14rem;
+  gap: var(--space-4);
+}
+
+.service-tile {
+  position: relative;
+  display: block;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  color: #fff9f5;
+  text-decoration: none;
+}
+
+.service-tile--feature {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.service-tile img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s var(--ease-out);
+}
+
+.service-tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(20, 16, 10, 0) 38%, rgba(20, 16, 10, 0.85) 100%);
+  transition: opacity 0.3s var(--ease-out);
+}
+
+.service-tile:hover::after {
+  opacity: 0.9;
+}
+
+.service-tile:hover img {
+  transform: scale(1.06);
+}
+
+.service-tile__body {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  padding: var(--space-5);
+}
+
+.service-tile__body h3 {
+  color: #fff9f5;
+  margin-bottom: var(--space-1);
+}
+
+.service-tile--feature .service-tile__body h3 {
+  font-size: clamp(1.5rem, 1.1rem + 1.2vw, 2rem);
+}
+
+.service-tile__body p {
+  color: #e7e1d2;
+  font-size: 0.9rem;
+  max-width: none;
+  margin-bottom: var(--space-3);
+}
+
+.service-tile__go {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff9f5;
+}
+
+.service-tile__go svg {
+  width: 1rem;
+  height: 1rem;
+  transition: transform 0.2s var(--ease-out);
+}
+
+.service-tile:hover .service-tile__go svg {
+  transform: translateX(3px);
+}
+
+.service-tile:focus-visible {
+  outline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+  .service-bento {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(12rem, auto);
+  }
+
+  .service-tile--feature {
+    grid-column: span 2;
+    grid-row: span 1;
+    min-height: 16rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .service-bento {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 12rem;
+  }
+
+  .service-tile--feature {
+    grid-column: span 1;
+    min-height: 15rem;
   }
 }
 
@@ -1395,6 +1561,41 @@ p.wide {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Sibling stagger for lists (service tiles, gallery, related cards,
+   partner logos): the container is observed like .reveal, but each
+   child animates on its own beat instead of the group moving as one
+   block. Uses `animation`, not `transition`, so it never collides
+   with a component's own hover transition on the same element.
+   Capped at 10 children so the total delay stays short. */
+@keyframes stagger-rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stagger-list > * {
+  opacity: 0;
+}
+
+.stagger-list.is-visible > * {
+  animation: stagger-rise 0.55s var(--ease-out) both;
+}
+
+.stagger-list.is-visible > *:nth-child(2) { animation-delay: 0.06s; }
+.stagger-list.is-visible > *:nth-child(3) { animation-delay: 0.12s; }
+.stagger-list.is-visible > *:nth-child(4) { animation-delay: 0.18s; }
+.stagger-list.is-visible > *:nth-child(5) { animation-delay: 0.24s; }
+.stagger-list.is-visible > *:nth-child(6) { animation-delay: 0.3s; }
+.stagger-list.is-visible > *:nth-child(7) { animation-delay: 0.36s; }
+.stagger-list.is-visible > *:nth-child(8) { animation-delay: 0.42s; }
+.stagger-list.is-visible > *:nth-child(9) { animation-delay: 0.48s; }
+.stagger-list.is-visible > *:nth-child(10) { animation-delay: 0.54s; }
 
 .legal-content h2 {
   margin-top: var(--space-7);

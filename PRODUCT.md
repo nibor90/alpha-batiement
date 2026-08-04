@@ -12,15 +12,15 @@ Static HTML/CSS/JS, no framework, no build step (delegated: chosen for a small m
 
 ## Users
 
-Homeowners and property owners in and around Brive-la-Gaillarde / Pazayac, Dordogne (Bergerac, Lembras, Creysse, Saint-Laurent-des-Vignes, Terrasson-Lavilledieu) who need roofing, guttering/zinc work, painting, insulation, or facade work. Many arrive urgently (an active roof leak) and need a phone number immediately; others are planning a renovation and are comparing local tradespeople before requesting a quote.
+Homeowners and property owners in and around Brive-la-Gaillarde / Pazayac, Dordogne (Bergerac, Lembras, Creysse, Saint-Laurent-des-Vignes, Terrasson-Lavilledieu) who need roofing, guttering/zinc work, insulation, or facade work. Many arrive urgently (an active roof leak) and need a phone number immediately; others are planning a renovation and are comparing local tradespeople before requesting a quote.
 
 ## Product Purpose
 
-A lead-generation site for Alpha Bâtiment, a multi-trade roofing/zinc-work/painting company. It exists to get visitors to call the emergency line or submit a quote request. Success = phone calls and quote-form submissions from the local service area.
+A lead-generation site for Alpha Bâtiment, a multi-trade roofing/zinc-work company. It exists to get visitors to call the emergency line or submit a quote request. Success = phone calls and quote-form submissions from the local service area.
 
 ## Positioning
 
-A single local contractor covering roofing, zinguerie, painting, insulation, and facades together, with an aerial platform truck ("camion avec nacelle") that lets the crew reach height safely without scaffolding — faster, safer high-access work than trades that sub out access equipment.
+A single local contractor covering roofing, zinguerie, insulation, and facades together, with an aerial platform truck ("camion avec nacelle") that lets the crew reach height safely without scaffolding — faster, safer high-access work than trades that sub out access equipment.
 
 ## Operating Context
 
@@ -31,15 +31,14 @@ A single local contractor covering roofing, zinguerie, painting, insulation, and
 
 ## Capabilities and Constraints
 
-Eight service lines to present (each needs its own explanation, matching the current site's categories):
+Seven service lines to present (each needs its own explanation, matching the current site's categories). The painting line was dropped from the offering at the owner's request (2026-08-04); do not reintroduce it.
 1. Urgence Fuite Toiture (emergency roof leak)
 2. Travaux de Couverture (roofing)
 3. Travaux de Zinguerie (zinc/guttering work)
-4. Travaux de Peinture (painting, intérieur & extérieur)
-5. Travaux d'Isolation (insulation)
-6. Travaux de Façades (facade/render work)
-7. Entretien de Toiture (roof maintenance/cleaning)
-8. Pose de Fenêtre de Toit (roof window/Velux installation)
+4. Travaux d'Isolation (insulation)
+5. Travaux de Façades (facade/render work)
+6. Entretien de Toiture (roof maintenance/cleaning)
+7. Pose de Fenêtre de Toit (roof window/Velux installation)
 
 Coverage area: Pazayac and surrounding Dordogne towns — Brive-la-Gaillarde, Bergerac, Lembras, Creysse, Saint-Laurent-des-Vignes, Terrasson-Lavilledieu.
 
@@ -52,6 +51,8 @@ Contact facts (must stay accurate, do not alter):
 Contact form: no backend server. Uses a free third-party form-relay (FormSubmit, action-based, no signup, forwards to alphabatiment.fr@gmail.com) so the static site can still deliver quote requests by email. The owner must click one confirmation link the first time a submission is sent, per FormSubmit's activation flow.
 
 The current site's animated stat counters ("+0 Travaux de Couverture", "+0 Travaux de Zinguerie", "+0 Travaux de Peinture", "+0% Clients Satisfaits") never had real numbers configured — no verified figures exist. Do not invent statistics; omit the counters or replace them with concrete, truthful claims (service list, coverage towns, response promise) instead.
+
+Two of the ten real gallery photos (interior paint-prep shots) are no longer displayed publicly now that painting is not an offered service; they remain on disk in `assets/gallery/` but are excluded from the gallery page, homepage, and any service row.
 
 No verified customer testimonials, case-study text, pricing, or certifications exist beyond the supplier/material brand logos below. Do not fabricate reviews, awards, or numeric guarantees.
 
@@ -73,7 +74,7 @@ No verified customer testimonials, case-study text, pricing, or certifications e
 ## Product Principles
 
 1. The emergency phone number is always one glance/tap away — an active leak is a real use case, not a hypothetical.
-2. Multi-trade breadth (roofing + zinc + paint + insulation + facades) is the core pitch; every service must be easy to find, not buried under one "featured" trade.
+2. Multi-trade breadth (roofing + zinc + insulation + facades) is the core pitch; every service must be easy to find, not buried under one "featured" trade.
 3. Local, factual trust signals (coverage towns, real job photos, material-brand partnerships, direct owner contact) replace generic stock-photo trust theater.
 4. Never invent numbers, reviews, or claims the owner hasn't confirmed.
 

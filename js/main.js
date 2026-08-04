@@ -36,8 +36,10 @@
     });
   });
 
-  /* Scroll reveal: one authored moment, not per-element scatter */
-  var revealEls = document.querySelectorAll(".reveal");
+  /* Scroll reveal: quiet supporting motion for sections below the fold.
+     .stagger-list uses the same observer but reveals its children on
+     their own beat (see CSS) instead of moving as one block. */
+  var revealEls = document.querySelectorAll(".reveal, .stagger-list");
   if ("IntersectionObserver" in window && revealEls.length) {
     var observer = new IntersectionObserver(
       function (entries) {

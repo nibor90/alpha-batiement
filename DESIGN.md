@@ -1,6 +1,6 @@
 ---
 name: Alpha Bâtiment
-description: Site vitrine multi-pages pour un artisan couvreur-zingueur-peintre en Dordogne, exécuté au niveau d'un studio d'architecte plutôt que d'un template d'entreprise du bâtiment.
+description: Site vitrine multi-pages pour un artisan couvreur-zingueur en Dordogne, exécuté au niveau d'un studio d'architecte plutôt que d'un template d'entreprise du bâtiment.
 colors:
   stone-ground: "#f5f2ea"
   stone-ground-deep: "#ece5d5"
@@ -71,7 +71,7 @@ components:
 
 **Creative North Star: "The Architect's Site Visit"**
 
-Alpha Bâtiment is a multi-trade roofing, zinc-work, painting, insulation and facade contractor in rural Dordogne, and the site is built to read like the portfolio site of a small architecture studio that happens to also fix roofs — not like a stock WordPress contractor template. The system trades icon-circle soup, gradient hero banners, and animated counters (the previous site's visual vocabulary) for a warm stone-neutral canvas, one confident signal-red reserved for action and urgency, generous negative space, and real, unstaged job-site photography treated as the primary evidence of craft.
+Alpha Bâtiment is a multi-trade roofing, zinc-work, insulation and facade contractor in rural Dordogne, and the site is built to read like the portfolio site of a small architecture studio that happens to also fix roofs — not like a stock WordPress contractor template. The system trades icon-circle soup, gradient hero banners, and animated counters (the previous site's visual vocabulary) for a warm stone-neutral canvas, one confident signal-red reserved for action and urgency, generous negative space, and real, unstaged job-site photography treated as the primary evidence of craft.
 
 The incumbent site (Elementor stock-photo template, icon grids, unset "+0" stat counters) is the explicit anti-reference. Every decision here pulls toward calm, factual trust — real photos, real coverage towns, one phone number always visible — rather than generic contractor-site trust theater.
 
@@ -177,6 +177,18 @@ Borders are always the hairline pair (`--color-line` at rest, `--color-line-stro
 
 ### Service Row (signature component)
 The photo-led index row is this system's replacement for the generic icon-card grid: a fixed 9.5×7rem photo thumbnail, service name + one-line description, and a trailing "Découvrir →" link where the arrow nudges right on row hover. One variant, `.service-row--urgent`, inverts to the dark Near-Black Ink surface with a bright coral go-link (`#ff8f8f`) — the system's only heightened-urgency treatment, reserved for the emergency-leak entry point at the top of the service list.
+
+### Service Showcase (homepage-only bento grid)
+The homepage trades the Service Row's uniform list for a single asymmetric photo grid — one large feature tile (Couverture, spanning 2×2) beside five smaller tiles, each a full-bleed real photo with a bottom gradient (`rgba(20,16,10,0) → rgba(20,16,10,.85)`) carrying the title and a "Découvrir →" link directly on the image. This is deliberately bolder than the Service Row it links onward to: fewer words, larger imagery, one clear visual hierarchy (Couverture first). It stays within the system's own vocabulary — same radius, same red-free go-link styling (white on photo instead of red-on-paper, since red stays reserved for true actions), same hover language (image scale + arrow nudge) — rather than inventing a new component family. `prestations.html` and every detail page keep the plain Service Row / Related Card as the exhaustive, scannable index; only the homepage gets the teaser treatment.
+
+## Motion
+
+Motion is one authored focal moment plus quiet, consistent supporting reveals — never a scroll-triggered fade on every section.
+
+- **The focal moment:** on the homepage only, the hero content (headline, lede, actions) cascades in with a 3-step stagger and the hero photo settles from a slight zoom via `clip-path` + `scale`, both running once on page load. This is the site's one rehearsed entrance; no other section repeats it.
+- **Supporting reveal:** below-the-fold sections use `.reveal` (a single fade-up on scroll into view) or, for anything that reads as a list — service tiles, the gallery grid, related-service cards, partner logos — `.stagger-list`, which reveals each child on its own beat (capped around half a second of total spread) instead of moving the group as one block.
+- **Implementation rule:** `.stagger-list` animates with the `animation` property, never `transition`, specifically so it never collides with a component's own hover transition (e.g. Related Card's `transform` on hover) on the same element.
+- All motion respects `prefers-reduced-motion: reduce` (durations and delays collapse to near-zero site-wide).
 
 ## Do's and Don'ts
 

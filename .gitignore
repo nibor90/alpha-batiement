@@ -3,6 +3,7 @@ Thumbs.db
 node_modules/
 .vercel
 *.log
+.git-commit-msg.txt
 
 # Agent tooling (not part of the deployed site)
 .cursor/
