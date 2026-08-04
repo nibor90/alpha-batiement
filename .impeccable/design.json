@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-04T00:00:00Z",
+  "title": "Design System: Alpha Bâtiment",
+  "extensions": {
+    "colorMeta": {
+      "signal-red": { "role": "primary", "displayName": "Signal Red", "canonical": "#b91f2c", "tonalRamp": ["#2e0a0d", "#4a1015", "#6c161c", "#8c1620", "#b91f2c", "#d14a55", "#e79aa1", "#f7e6e2"] },
+      "signal-red-deep": { "role": "primary-hover", "displayName": "Signal Red Deep", "canonical": "#8c1620" },
+      "signal-red-tint": { "role": "primary-tint", "displayName": "Signal Red Tint", "canonical": "#f7e6e2" },
+      "stone-ground": { "role": "neutral-bg", "displayName": "Stone Ground", "canonical": "#f5f2ea", "tonalRamp": ["#21201c", "#3a3833", "#4a453c", "#736b5c", "#ece5d5", "#f5f2ea", "#fffdf9", "#ffffff"] },
+      "stone-ground-deep": { "role": "neutral-bg-alt", "displayName": "Stone Ground Deep", "canonical": "#ece5d5" },
+      "warm-surface": { "role": "surface", "displayName": "Warm Surface", "canonical": "#fffdf9" },
+      "near-black-ink": { "role": "text-primary", "displayName": "Near-Black Ink", "canonical": "#21201c" },
+      "soft-ink": { "role": "text-secondary", "displayName": "Soft Ink", "canonical": "#4a453c" },
+      "muted-ink": { "role": "text-tertiary", "displayName": "Muted Ink", "canonical": "#736b5c" },
+      "hairline": { "role": "border", "displayName": "Hairline", "canonical": "#ddd3bd" },
+      "hairline-strong": { "role": "border-strong", "displayName": "Hairline Strong", "canonical": "#c9bda0" },
+      "ink-inverse": { "role": "text-on-dark", "displayName": "Ink Inverse", "canonical": "#f5f2ea" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display (Space Grotesk)", "purpose": "H1–H3 headings only; never body copy." },
+      "body": { "displayName": "Body (Inter)", "purpose": "All running copy, labels, nav, form fields." }
+    },
+    "shadows": [
+      { "name": "card", "value": "0 1px 2px rgba(33,28,20,0.05), 0 14px 32px -18px rgba(33,28,20,0.28)", "purpose": "Resting elevation for the primary button and the proof-section photo." },
+      { "name": "lift", "value": "0 2px 4px rgba(33,28,20,0.08), 0 20px 40px -20px rgba(33,28,20,0.35)", "purpose": "Hover state for buttons; resting state of the hero photo and nav dropdown." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Default easing for all hover/transition states across buttons, rows, and reveals." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "560px" },
+      { "name": "form", "value": "640px" },
+      { "name": "service-row", "value": "720px" },
+      { "name": "two-col", "value": "820px" },
+      { "name": "nav", "value": "900px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main call-to-action across the site (Demander un devis, Envoyer ma demande).",
+      "html": "<button class=\"ds-btn-primary\">Demander un devis</button>",
+      "css": ".ds-btn-primary { background: #b91f2c; color: #fff9f5; padding: 0.85rem 1.5rem; border-radius: 6px; font-weight: 600; font-size: 0.95rem; border: none; box-shadow: 0 1px 2px rgba(33,28,20,0.05), 0 14px 32px -18px rgba(33,28,20,0.28); transition: transform 0.2s cubic-bezier(0.16,1,0.3,1), background-color 0.2s cubic-bezier(0.16,1,0.3,1), box-shadow 0.2s cubic-bezier(0.16,1,0.3,1); } .ds-btn-primary:hover { background: #8c1620; transform: translateY(-1px); box-shadow: 0 2px 4px rgba(33,28,20,0.08), 0 20px 40px -20px rgba(33,28,20,0.35); } .ds-btn-primary:focus-visible { outline: 2px solid #b91f2c; outline-offset: 2px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary action (Toutes les prestations, Voir toute la galerie).",
+      "html": "<button class=\"ds-btn-ghost\">Toutes les prestations</button>",
+      "css": ".ds-btn-ghost { background: transparent; color: #21201c; border: 1px solid #c9bda0; padding: 0.85rem 1.5rem; border-radius: 6px; font-weight: 600; font-size: 0.95rem; transition: border-color 0.2s cubic-bezier(0.16,1,0.3,1), background-color 0.2s cubic-bezier(0.16,1,0.3,1); } .ds-btn-ghost:hover { border-color: #21201c; background: #fffdf9; }"
+    },
+    {
+      "name": "Phone Pill",
+      "kind": "chip",
+      "refersTo": "phone-pill",
+      "description": "The always-visible emergency phone affordance in the header, hero, and CTA banners.",
+      "html": "<a class=\"ds-phone-pill\" href=\"tel:+33638961626\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M6.6 10.8c1.5 3 4.1 5.6 7.1 7.1l2.4-2.4a1 1 0 0 1 1-.25c1.2.35 2.5.55 3.9.55a1 1 0 0 1 1 1V20.5a1 1 0 0 1-1 1C10.6 21.5 2.5 13.4 2.5 3a1 1 0 0 1 1-1H6.9a1 1 0 0 1 1 1c0 1.4.2 2.7.55 3.9a1 1 0 0 1-.25 1L6.6 10.8Z\"/></svg>06 38 96 16 26</a>",
+      "css": ".ds-phone-pill { display: inline-flex; align-items: center; gap: 0.5rem; background: #b91f2c; color: #fff9f5; padding: 0.6rem 1.05rem; border-radius: 999px; font-weight: 600; font-size: 0.9rem; white-space: nowrap; transition: background-color 0.2s cubic-bezier(0.16,1,0.3,1); text-decoration: none; } .ds-phone-pill:hover { background: #8c1620; }"
+    },
+    {
+      "name": "Service Row",
+      "kind": "custom",
+      "refersTo": "service-row",
+      "description": "Photo-led index row: signature replacement for the generic icon-card grid, used to list all eight trades.",
+      "html": "<a class=\"ds-service-row\" href=\"#\"><div class=\"ds-service-row__media\"><img src=\"photo.jpg\" alt=\"\" /></div><div class=\"ds-service-row__body\"><h3>Travaux de couverture</h3><p>Réfection, rénovation et création de toitures.</p></div><span class=\"ds-service-row__go\">Découvrir <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 12h16M13 5l7 7-7 7\"/></svg></span></a>",
+      "css": ".ds-service-row { display: grid; grid-template-columns: 9.5rem 1fr auto; align-items: center; gap: 2rem; padding: 2rem 0; border-bottom: 1px solid #ddd3bd; text-decoration: none; color: inherit; transition: background-color 0.2s cubic-bezier(0.16,1,0.3,1); } .ds-service-row:hover { background: #ece5d5; } .ds-service-row__media { width: 9.5rem; height: 7rem; border-radius: 6px; overflow: hidden; } .ds-service-row__media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s cubic-bezier(0.16,1,0.3,1); } .ds-service-row:hover .ds-service-row__media img { transform: scale(1.05); } .ds-service-row__go { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; font-weight: 600; color: #b91f2c; white-space: nowrap; }"
+    },
+    {
+      "name": "Related Card",
+      "kind": "card",
+      "refersTo": "related-card",
+      "description": "Small photo card linking to a related service, used at the bottom of every service detail page.",
+      "html": "<a class=\"ds-related-card\" href=\"#\"><div class=\"ds-related-card__media\"><img src=\"photo.jpg\" alt=\"\" /></div><div class=\"ds-related-card__body\"><h4>Travaux de zinguerie</h4><span>Solins &amp; raccords →</span></div></a>",
+      "css": ".ds-related-card { display: block; border-radius: 6px; overflow: hidden; border: 1px solid #ddd3bd; background: #fffdf9; transition: box-shadow 0.2s cubic-bezier(0.16,1,0.3,1), transform 0.2s cubic-bezier(0.16,1,0.3,1); text-decoration: none; color: inherit; } .ds-related-card:hover { box-shadow: 0 1px 2px rgba(33,28,20,0.05), 0 14px 32px -18px rgba(33,28,20,0.28); transform: translateY(-2px); } .ds-related-card__media { aspect-ratio: 16/10; overflow: hidden; } .ds-related-card__media img { width: 100%; height: 100%; object-fit: cover; } .ds-related-card__body { padding: 1rem 1.5rem; } .ds-related-card__body h4 { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 1rem; margin: 0 0 0.25rem; } .ds-related-card__body span { font-size: 0.85rem; color: #b91f2c; font-weight: 600; }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "field-input",
+      "description": "Form input/textarea/select used throughout the contact form.",
+      "html": "<div class=\"ds-field\"><label for=\"ds-email\">E-mail *</label><input id=\"ds-email\" type=\"email\" required /></div>",
+      "css": ".ds-field { display: flex; flex-direction: column; gap: 0.5rem; } .ds-field label { font-size: 0.85rem; font-weight: 600; color: #4a453c; } .ds-field input { border: 1px solid #c9bda0; border-radius: 3px; padding: 0.75rem 0.9rem; background: #fffdf9; color: #21201c; transition: border-color 0.2s cubic-bezier(0.16,1,0.3,1), box-shadow 0.2s cubic-bezier(0.16,1,0.3,1); } .ds-field input:focus { border-color: #b91f2c; box-shadow: 0 0 0 3px #f7e6e2; outline: none; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Architect's Site Visit",
+    "overview": "Alpha Bâtiment is a multi-trade roofing, zinc-work, painting, insulation and facade contractor in rural Dordogne, and the site is built to read like the portfolio site of a small architecture studio that happens to also fix roofs — not like a stock WordPress contractor template. The system trades icon-circle soup, gradient hero banners, and animated counters (the previous site's visual vocabulary) for a warm stone-neutral canvas, one confident signal-red reserved for action and urgency, generous negative space, and real, unstaged job-site photography treated as the primary evidence of craft. The incumbent site (Elementor stock-photo template, icon grids, unset \"+0\" stat counters) is the explicit anti-reference. Every decision here pulls toward calm, factual trust — real photos, real coverage towns, one phone number always visible — rather than generic contractor-site trust theater.",
+    "keyCharacteristics": [
+      "Warm stone-paper ground, near-black warm ink — never pure white or pure black.",
+      "One accent color (signal red) used exclusively for calls-to-action, urgency, and hover states; never decorative.",
+      "Space Grotesk display type paired with Inter body type: geometric confidence up top, high-legibility workhorse below.",
+      "Real job photography at large scale is the system's primary decoration; there is no stock photography and no icon-circle grid.",
+      "Thin 1px hairlines do the organizing work that shadows or card borders would do in a more decorative system."
+    ],
+    "rules": [
+      { "name": "The One Red Rule", "body": "Signal red appears only on things you can act on — a button, a phone number, an active nav state, a focus ring. It never appears as a background wash, a heading color, or a decorative flourish.", "section": "colors" },
+      { "name": "The No-Eyebrow Rule", "body": "Sections open straight into their H2; there is no small-caps kicker line above headings.", "section": "typography" },
+      { "name": "The Hairline-Not-Shadow Rule", "body": "Lists, rows, and section boundaries are separated with a 1px hairline, never a card shadow. Shadows are reserved for the handful of surfaces that should feel physically lifted.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use real, unstaged job-site photography at large scale as the primary visual interest of every section.",
+      "Do keep Signal Red reserved for actionable elements only.",
+      "Do separate lists and rows with 1px hairlines rather than card shadows or backgrounds.",
+      "Do keep body copy measure-constrained (~34rem) even inside wide containers.",
+      "Do keep the phone number visible in the header and in every page's closing CTA."
+    ],
+    "donts": [
+      "Don't introduce icon-circle grids, gradient hero banners, or animated counters.",
+      "Don't add a small-caps eyebrow kicker above headings.",
+      "Don't use stock photography anywhere.",
+      "Don't invent statistics, testimonials, or certifications not confirmed by the business owner.",
+      "Don't use pure black or pure white anywhere."
+    ]
+  }
+}

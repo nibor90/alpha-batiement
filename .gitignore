@@ -1,0 +1,12 @@
+.DS_Store
+Thumbs.db
+node_modules/
+.vercel
+*.log
+
+# Agent tooling (not part of the deployed site)
+.cursor/
+.claude/
+.codex/
+.kiro/
+.agents/
