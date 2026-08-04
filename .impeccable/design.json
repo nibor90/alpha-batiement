@@ -1,37 +1,34 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-08-04T19:30:00Z",
+  "generatedAt": "2026-08-04T20:05:00Z",
   "title": "Design System: Alpha Bâtiment",
   "extensions": {
     "colorMeta": {
-      "primary-teal": { "role": "primary", "displayName": "Primary Teal", "canonical": "#5a9ea6", "tonalRamp": ["#1b2a30", "#2d3e44", "#437880", "#5a9ea6", "#7fb5bb", "#b7d9dc", "#e8f4f6", "#ffffff"] },
-      "primary-teal-dark": { "role": "primary-hover", "displayName": "Primary Teal Dark", "canonical": "#437880" },
-      "primary-teal-lighter": { "role": "primary-tint", "displayName": "Primary Teal Lighter", "canonical": "#e8f4f6" },
-      "accent-terracotta": { "role": "accent", "displayName": "Accent Terracotta", "canonical": "#d4883a", "tonalRamp": ["#3d2510", "#5f3818", "#8a5222", "#b8702c", "#d4883a", "#e5a75e", "#f2caa0", "#fbeee0"] },
-      "accent-terracotta-dark": { "role": "accent-hover", "displayName": "Accent Terracotta Dark", "canonical": "#b8702c" },
-      "accent-terracotta-tint": { "role": "accent-tint", "displayName": "Accent Terracotta Tint", "canonical": "#fbeee0" },
-      "off-white": { "role": "neutral-bg", "displayName": "Off-White", "canonical": "#f5f7f8" },
-      "bg-alt": { "role": "neutral-bg-alt", "displayName": "BG Alt", "canonical": "#eaf1f2" },
+      "brand-red": { "role": "primary + accent", "displayName": "Brand Red (logo)", "canonical": "#be1e2f", "tonalRamp": ["#231f20", "#4c1219", "#6f1520", "#8f1522", "#be1e2f", "#d75b6a", "#f0a3ac", "#fbe9eb"] },
+      "brand-red-dark": { "role": "primary-hover / accent-hover", "displayName": "Brand Red Dark", "canonical": "#8f1522" },
+      "brand-red-lighter": { "role": "primary-tint / accent-tint", "displayName": "Brand Red Lighter", "canonical": "#fbe9eb" },
+      "off-white": { "role": "neutral-bg", "displayName": "Off-White", "canonical": "#f7f6f5" },
+      "bg-alt": { "role": "neutral-bg-alt", "displayName": "BG Alt", "canonical": "#efecec" },
       "surface": { "role": "surface", "displayName": "Surface", "canonical": "#ffffff" },
-      "ink": { "role": "text-primary", "displayName": "Ink", "canonical": "#1b2a30" },
-      "ink-soft": { "role": "text-secondary", "displayName": "Ink Soft", "canonical": "#45565c" },
-      "ink-muted": { "role": "text-tertiary", "displayName": "Ink Muted", "canonical": "#6b7b82" },
-      "hairline": { "role": "border", "displayName": "Hairline", "canonical": "#e3e8ea" },
-      "hairline-strong": { "role": "border-strong", "displayName": "Hairline Strong", "canonical": "#c7d1d4" },
-      "ink-inverse": { "role": "text-on-dark", "displayName": "Ink Inverse", "canonical": "#f5f7f8" }
+      "ink": { "role": "text-primary", "displayName": "Ink (logo noir)", "canonical": "#231f20" },
+      "ink-soft": { "role": "text-secondary", "displayName": "Ink Soft", "canonical": "#4c4748" },
+      "ink-muted": { "role": "text-tertiary", "displayName": "Ink Muted", "canonical": "#746f70" },
+      "hairline": { "role": "border", "displayName": "Hairline", "canonical": "#e7e3e3" },
+      "hairline-strong": { "role": "border-strong", "displayName": "Hairline Strong", "canonical": "#d2cdce" },
+      "ink-inverse": { "role": "text-on-dark", "displayName": "Ink Inverse", "canonical": "#f7f6f5" }
     },
     "typographyMeta": {
       "display": { "displayName": "Display (Montserrat)", "purpose": "H1–H4 headings only; never body copy. 800 weight for H1/H2, 700 for H3/H4." },
       "body": { "displayName": "Body (Open Sans)", "purpose": "All running copy, labels, nav, form fields." }
     },
     "shadows": [
-      { "name": "card", "value": "0 1px 2px rgba(27,42,48,0.06), 0 14px 32px -18px rgba(27,42,48,0.22)", "purpose": "Resting elevation for the sticky header, trust pills, and the primary button." },
-      { "name": "lift", "value": "0 2px 4px rgba(27,42,48,0.1), 0 22px 44px -20px rgba(27,42,48,0.3)", "purpose": "Hover state for service cards, related cards, and buttons; resting state of the hero photo and nav dropdown." }
+      { "name": "card", "value": "0 1px 2px rgba(35,31,32,0.06), 0 14px 32px -18px rgba(35,31,32,0.22)", "purpose": "Resting elevation for the sticky header, trust pills, and the primary button." },
+      { "name": "lift", "value": "0 2px 4px rgba(35,31,32,0.1), 0 22px 44px -20px rgba(35,31,32,0.3)", "purpose": "Hover state for service cards, related cards, and buttons; resting state of the hero photo and nav dropdown." }
     ],
     "motion": [
       { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Default easing for all hover/transition states." },
       { "name": "hero-focal-entrance", "value": "hero-rise 0.7s ease-out (5-step stagger incl. live badge) + hero-photo-settle 1.4s ease-out (clip-path + scale)", "purpose": "The one authored moment on load: the homepage hero's live badge/headline/lede/actions cascade in while the full-bleed photo settles from a slight zoom behind the gradient overlay." },
-      { "name": "live-badge-pulse", "value": "live-ping 1.8s cubic-bezier(0,0,0.2,1) infinite on the dot's ::before, only when open", "purpose": "Signals the live open/closed badge is a real-time computed state, not static chrome. Respects prefers-reduced-motion." },
+      { "name": "live-badge-pulse", "value": "live-ping 1.8s cubic-bezier(0,0,0.2,1) infinite on the dot's ::before, only rendered when open", "purpose": "Signals the live open badge is a real-time computed state, not static chrome. The badge is only ever in the DOM/visible when the business is actually open (outside hours it is hidden via JS, never shown as a grey/closed state). Respects prefers-reduced-motion." },
       { "name": "stagger-list", "value": "keyframe stagger-rise 0.55s ease-out, +0.06s per sibling, capped at 10 children", "purpose": "Supporting motion for lists (service cards, gallery, related cards, partner logos) via `animation`, never `transition`." }
     ],
     "breakpoints": [
@@ -47,41 +44,41 @@
       "name": "Primary Button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "Main call-to-action across the site (Demander un devis, Envoyer ma demande). Dark-ink resting state; terracotta inside the hero specifically, so the single most important action stays the accent color.",
+      "description": "Main call-to-action across the site (Demander un devis, Envoyer ma demande). Always the brand red from the client's own logo — there is no separate 'calm' vs 'action' hue, so the button reads the same everywhere including inside the hero.",
       "html": "<button class=\"ds-btn-primary\">Demander un devis</button>",
-      "css": ".ds-btn-primary { background: #1b2a30; color: #ffffff; padding: 0.85rem 1.6rem; border-radius: 0.9rem; font-weight: 700; font-size: 0.95rem; border: none; box-shadow: 0 1px 2px rgba(27,42,48,0.06), 0 14px 32px -18px rgba(27,42,48,0.22); transition: transform 0.2s cubic-bezier(0.16,1,0.3,1), background-color 0.2s cubic-bezier(0.16,1,0.3,1), box-shadow 0.2s cubic-bezier(0.16,1,0.3,1); } .ds-btn-primary:hover { background: #437880; transform: translateY(-1px); box-shadow: 0 2px 4px rgba(27,42,48,0.1), 0 22px 44px -20px rgba(27,42,48,0.3); } .ds-btn-primary:focus-visible { outline: 2px solid #d4883a; outline-offset: 2px; }"
+      "css": ".ds-btn-primary { background: #be1e2f; color: #ffffff; padding: 0.85rem 1.6rem; border-radius: 0.9rem; font-weight: 700; font-size: 0.95rem; border: none; box-shadow: 0 1px 2px rgba(35,31,32,0.06), 0 14px 32px -18px rgba(35,31,32,0.22); transition: transform 0.2s cubic-bezier(0.16,1,0.3,1), background-color 0.2s cubic-bezier(0.16,1,0.3,1), box-shadow 0.2s cubic-bezier(0.16,1,0.3,1); } .ds-btn-primary:hover { background: #8f1522; transform: translateY(-1px); box-shadow: 0 2px 4px rgba(35,31,32,0.1), 0 22px 44px -20px rgba(35,31,32,0.3); } .ds-btn-primary:focus-visible { outline: 2px solid #be1e2f; outline-offset: 2px; }"
     },
     {
       "name": "Ghost Button",
       "kind": "button",
       "refersTo": "button-ghost",
-      "description": "Secondary action (Toutes les prestations, Voir toute la galerie). Hover fills teal, never terracotta.",
+      "description": "Secondary action (Toutes les prestations, Voir toute la galerie). Hover fills a light red tint of the same brand color, never a second hue.",
       "html": "<button class=\"ds-btn-ghost\">Toutes les prestations</button>",
-      "css": ".ds-btn-ghost { background: transparent; color: #1b2a30; border: 1.5px solid #c7d1d4; padding: 0.85rem 1.6rem; border-radius: 0.9rem; font-weight: 700; font-size: 0.95rem; transition: border-color 0.2s cubic-bezier(0.16,1,0.3,1), background-color 0.2s cubic-bezier(0.16,1,0.3,1), color 0.2s cubic-bezier(0.16,1,0.3,1); } .ds-btn-ghost:hover { border-color: #5a9ea6; background: #e8f4f6; color: #437880; }"
+      "css": ".ds-btn-ghost { background: transparent; color: #231f20; border: 1.5px solid #d2cdce; padding: 0.85rem 1.6rem; border-radius: 0.9rem; font-weight: 700; font-size: 0.95rem; transition: border-color 0.2s cubic-bezier(0.16,1,0.3,1), background-color 0.2s cubic-bezier(0.16,1,0.3,1), color 0.2s cubic-bezier(0.16,1,0.3,1); } .ds-btn-ghost:hover { border-color: #be1e2f; background: #fbe9eb; color: #8f1522; }"
     },
     {
       "name": "Phone Pill",
       "kind": "chip",
       "refersTo": "phone-pill",
-      "description": "The always-visible emergency phone affordance in the header, hero, and CTA banners.",
+      "description": "The always-visible emergency phone affordance. Appears exactly once per header state: as the last item of the desktop nav row, and inside the mobile off-canvas drawer — never duplicated a second time next to the burger button (that duplicate header-actions copy was a bug, removed).",
       "html": "<a class=\"ds-phone-pill\" href=\"tel:+33638961626\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M6.6 10.8c1.5 3 4.1 5.6 7.1 7.1l2.4-2.4a1 1 0 0 1 1-.25c1.2.35 2.5.55 3.9.55a1 1 0 0 1 1 1V20.5a1 1 0 0 1-1 1C10.6 21.5 2.5 13.4 2.5 3a1 1 0 0 1 1-1H6.9a1 1 0 0 1 1 1c0 1.4.2 2.7.55 3.9a1 1 0 0 1-.25 1L6.6 10.8Z\"/></svg>06 38 96 16 26</a>",
-      "css": ".ds-phone-pill { display: inline-flex; align-items: center; gap: 0.5rem; background: #d4883a; color: #ffffff; padding: 0.6rem 1.05rem; border-radius: 999px; font-weight: 700; font-size: 0.9rem; white-space: nowrap; transition: background-color 0.2s cubic-bezier(0.16,1,0.3,1), transform 0.2s cubic-bezier(0.16,1,0.3,1); text-decoration: none; } .ds-phone-pill:hover { background: #b8702c; transform: translateY(-1px); }"
+      "css": ".ds-phone-pill { display: inline-flex; align-items: center; gap: 0.5rem; background: #be1e2f; color: #ffffff; padding: 0.6rem 1.05rem; border-radius: 999px; font-weight: 700; font-size: 0.9rem; white-space: nowrap; transition: background-color 0.2s cubic-bezier(0.16,1,0.3,1), transform 0.2s cubic-bezier(0.16,1,0.3,1); text-decoration: none; } .ds-phone-pill:hover { background: #8f1522; transform: translateY(-1px); }"
     },
     {
       "name": "Service Card",
       "kind": "custom",
       "refersTo": "service-card",
-      "description": "Icon-badge card used identically on the homepage and prestations.html to list all seven trades, replacing the previous photo-led Service Row and homepage bento grid. The urgent trade uses the dark `--urgent` variant instead of a separate banner.",
+      "description": "Icon-badge card used identically on the homepage and prestations.html to list all seven trades. The urgent trade fills its whole card with the brand red instead of a separate banner — 'urgent' reads literally as the brand's own alert color.",
       "html": "<a class=\"ds-service-card\" href=\"#\"><span class=\"ds-service-card__icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 13 12 5l9 8\"/><path d=\"M5.5 12v7.5h13V12\"/></svg></span><h3>Travaux de couverture</h3><p>Réfection, rénovation et création de toitures, tuiles comme ardoises.</p><span class=\"ds-service-card__go\">Découvrir <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 12h16M13 5l7 7-7 7\"/></svg></span></a>",
-      "css": ".ds-service-card { display: flex; flex-direction: column; gap: 0.75rem; background: #ffffff; border: 1px solid #e3e8ea; border-radius: 1.25rem; padding: 2rem 1.5rem; text-decoration: none; color: inherit; transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s cubic-bezier(0.16,1,0.3,1), border-color 0.25s cubic-bezier(0.16,1,0.3,1); } .ds-service-card:hover { transform: translateY(-5px); box-shadow: 0 2px 4px rgba(27,42,48,0.1), 0 22px 44px -20px rgba(27,42,48,0.3); border-color: transparent; } .ds-service-card__icon { display: flex; align-items: center; justify-content: center; width: 3.1rem; height: 3.1rem; border-radius: 0.55rem; background: #e8f4f6; color: #437880; } .ds-service-card__go { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; font-weight: 700; color: #d4883a; margin-top: auto; } .ds-service-card--urgent { background: #1b2a30; border-color: #1b2a30; } .ds-service-card--urgent h3 { color: #ffffff; } .ds-service-card--urgent .ds-service-card__icon { background: rgba(255,255,255,0.14); color: #e5a75e; }"
+      "css": ".ds-service-card { display: flex; flex-direction: column; gap: 0.75rem; background: #ffffff; border: 1px solid #e7e3e3; border-radius: 1.25rem; padding: 2rem 1.5rem; text-decoration: none; color: inherit; transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s cubic-bezier(0.16,1,0.3,1), border-color 0.25s cubic-bezier(0.16,1,0.3,1); } .ds-service-card:hover { transform: translateY(-5px); box-shadow: 0 2px 4px rgba(35,31,32,0.1), 0 22px 44px -20px rgba(35,31,32,0.3); border-color: transparent; } .ds-service-card__icon { display: flex; align-items: center; justify-content: center; width: 3.1rem; height: 3.1rem; border-radius: 0.55rem; background: #fbe9eb; color: #8f1522; } .ds-service-card__go { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; font-weight: 700; color: #be1e2f; margin-top: auto; } .ds-service-card--urgent { background: #be1e2f; border-color: #be1e2f; } .ds-service-card--urgent h3, .ds-service-card--urgent .ds-service-card__go { color: #ffffff; } .ds-service-card--urgent .ds-service-card__icon { background: rgba(255,255,255,0.2); color: #ffffff; }"
     },
     {
       "name": "Live Status Badge",
       "kind": "custom",
       "refersTo": "live-badge",
-      "description": "Homepage-hero-only pill badge computed client-side from the business's real declared hours (Lun-Sam 8h-18h); never a decorative or hardcoded 'online now' prop.",
+      "description": "Homepage-hero-only pill badge computed client-side from the business's real declared hours (Lun-Sam 8h-18h). It only ever announces 'ouvert' — outside those hours the badge is hidden entirely (display:none via JS) rather than showing a grey 'fermé actuellement' state, since a closed announcement discourages the very call it exists to prompt.",
       "html": "<span class=\"ds-live-badge\"><span class=\"ds-live-badge__dot\"></span><span>Ouvert maintenant · Lun–Sam 8h–18h</span></span>",
-      "css": ".ds-live-badge { display: inline-flex; align-items: center; gap: 0.55rem; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.28); backdrop-filter: blur(6px); color: #ffffff; padding: 0.5rem 1rem 0.5rem 0.8rem; border-radius: 999px; font-size: 0.82rem; font-weight: 700; } .ds-live-badge__dot { position: relative; width: 0.55rem; height: 0.55rem; border-radius: 999px; background: #6bc78a; } .ds-live-badge__dot::before { content: ''; position: absolute; inset: -4px; border-radius: 999px; background: #6bc78a; opacity: 0.45; animation: live-ping 1.8s cubic-bezier(0,0,0.2,1) infinite; } .ds-live-badge.is-closed .ds-live-badge__dot, .ds-live-badge.is-closed .ds-live-badge__dot::before { background: #b9c3c6; }"
+      "css": ".ds-live-badge { display: inline-flex; align-items: center; gap: 0.55rem; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.28); backdrop-filter: blur(6px); color: #ffffff; padding: 0.5rem 1rem 0.5rem 0.8rem; border-radius: 999px; font-size: 0.82rem; font-weight: 700; } .ds-live-badge__dot { position: relative; width: 0.55rem; height: 0.55rem; border-radius: 999px; background: #6bc78a; } .ds-live-badge__dot::before { content: ''; position: absolute; inset: -4px; border-radius: 999px; background: #6bc78a; opacity: 0.45; animation: live-ping 1.8s cubic-bezier(0,0,0.2,1) infinite; }"
     },
     {
       "name": "Related Card",
@@ -89,44 +86,47 @@
       "refersTo": "related-card",
       "description": "Small photo card linking to a related service, used at the bottom of every service detail page.",
       "html": "<a class=\"ds-related-card\" href=\"#\"><div class=\"ds-related-card__media\"><img src=\"photo.jpg\" alt=\"\" /></div><div class=\"ds-related-card__body\"><h4>Travaux de zinguerie</h4><span>Solins &amp; raccords →</span></div></a>",
-      "css": ".ds-related-card { display: block; border-radius: 0.9rem; overflow: hidden; border: 1px solid #e3e8ea; background: #ffffff; transition: box-shadow 0.2s cubic-bezier(0.16,1,0.3,1), transform 0.2s cubic-bezier(0.16,1,0.3,1); text-decoration: none; color: inherit; } .ds-related-card:hover { box-shadow: 0 2px 4px rgba(27,42,48,0.1), 0 22px 44px -20px rgba(27,42,48,0.3); transform: translateY(-3px); } .ds-related-card__media { aspect-ratio: 16/10; overflow: hidden; } .ds-related-card__body { padding: 1rem 1.5rem; } .ds-related-card__body h4 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1rem; margin: 0 0 0.25rem; } .ds-related-card__body span { font-size: 0.85rem; color: #d4883a; font-weight: 700; }"
+      "css": ".ds-related-card { display: block; border-radius: 0.9rem; overflow: hidden; border: 1px solid #e7e3e3; background: #ffffff; transition: box-shadow 0.2s cubic-bezier(0.16,1,0.3,1), transform 0.2s cubic-bezier(0.16,1,0.3,1); text-decoration: none; color: inherit; } .ds-related-card:hover { box-shadow: 0 2px 4px rgba(35,31,32,0.1), 0 22px 44px -20px rgba(35,31,32,0.3); transform: translateY(-3px); } .ds-related-card__media { aspect-ratio: 16/10; overflow: hidden; } .ds-related-card__body { padding: 1rem 1.5rem; } .ds-related-card__body h4 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1rem; margin: 0 0 0.25rem; } .ds-related-card__body span { font-size: 0.85rem; color: #be1e2f; font-weight: 700; }"
     },
     {
       "name": "Text Field",
       "kind": "input",
       "refersTo": "field-input",
-      "description": "Form input/textarea/select used throughout the contact form. Focus ring is teal (calm state), never terracotta.",
+      "description": "Form input/textarea/select used throughout the contact form. Focus ring is the brand red.",
       "html": "<div class=\"ds-field\"><label for=\"ds-email\">E-mail *</label><input id=\"ds-email\" type=\"email\" required /></div>",
-      "css": ".ds-field { display: flex; flex-direction: column; gap: 0.5rem; } .ds-field label { font-size: 0.85rem; font-weight: 600; color: #45565c; } .ds-field input { border: 1px solid #c7d1d4; border-radius: 0.3rem; padding: 0.75rem 0.9rem; background: #ffffff; color: #1b2a30; transition: border-color 0.2s cubic-bezier(0.16,1,0.3,1), box-shadow 0.2s cubic-bezier(0.16,1,0.3,1); } .ds-field input:focus { border-color: #5a9ea6; box-shadow: 0 0 0 3px #e8f4f6; outline: none; }"
+      "css": ".ds-field { display: flex; flex-direction: column; gap: 0.5rem; } .ds-field label { font-size: 0.85rem; font-weight: 600; color: #4c4748; } .ds-field input { border: 1px solid #d2cdce; border-radius: 0.3rem; padding: 0.75rem 0.9rem; background: #ffffff; color: #231f20; transition: border-color 0.2s cubic-bezier(0.16,1,0.3,1), box-shadow 0.2s cubic-bezier(0.16,1,0.3,1); } .ds-field input:focus { border-color: #be1e2f; box-shadow: 0 0 0 3px #fbe9eb; outline: none; }"
     }
   ],
   "narrative": {
-    "northStar": "The Professional Roofer's Site (user-pinned reference: dt-couverture-33.fr)",
-    "overview": "Alpha Bâtiment is a multi-trade roofing, zinc-work, insulation and facade contractor in rural Dordogne. This second design pass supersedes the first, stone-neutral 'Architect's Site Visit' system (preserved on branch design-v1-canon-artisan): the client pinned a concrete competitor reference and asked the site to follow its visual world — a confident, modern trade-site register with a teal/terracotta palette, rounded icon-badge service cards, pill badges, and a full-bleed photo hero with a dark gradient overlay. The reference's palette, type pairing, radius scale, shadow language, and card/badge vocabulary are adopted; nothing the reference cannot prove for Alpha Bâtiment is — no fabricated review score, no invented experience statistic, no decorative 'online now' indicator. The one live-status badge is computed client-side from the business's real declared hours.",
+    "northStar": "The Professional Roofer's Site, in Alpha Bâtiment's own colors (layout reference: dt-couverture-33.fr; palette: the client's logo)",
+    "overview": "Alpha Bâtiment is a multi-trade roofing, zinc-work, insulation and facade contractor in rural Dordogne. This design pass keeps the confident, modern trade-site layout vocabulary the client pinned from a competitor reference (dt-couverture-33.fr) — full-bleed photo hero, rounded icon-badge service cards, pill badges — but replaces that reference's teal/terracotta palette with Alpha Bâtiment's own brand colors, sampled directly from the client's logo: brand red #be1e2f and charcoal ink #231f20. Nothing the reference cannot prove for Alpha Bâtiment is copied — no fabricated review score, no invented experience statistic, no decorative 'fermé' badge. The one live-status badge is computed client-side from the business's real declared hours and only ever appears to say 'ouvert'; outside those hours it is hidden rather than announcing closure. The header shows the phone number exactly once per breakpoint (a duplicate copy next to the mobile burger button was a bug and has been removed).",
     "keyCharacteristics": [
-      "Off-white paper ground, dark-navy ink — a calmer, cooler register than the previous stone-neutral system.",
-      "Two-color brand duo: teal (structure, calm, links, focus) and terracotta (action, urgency, every clickable CTA).",
+      "Off-white paper ground, charcoal ink (#231f20, sampled from the logo) — no navy, no invented dark hue.",
+      "Single brand color, not a duo: the same red (#be1e2f) that appears in the logo is used for every interactive/accent moment — buttons, phone pill, hover underlines, the urgent-service card, focus rings.",
       "Montserrat (700/800) display paired with Open Sans body.",
-      "Generously rounded corners everywhere (radius-lg/xl, pill badges) — the previous tight 3-6px radius is gone.",
-      "Custom line icons (not a generic icon font) carry the seven-trade service grid."
+      "Generously rounded corners everywhere (radius-lg/xl, pill badges).",
+      "Custom line icons (not a generic icon font) carry the seven-trade service grid, tinted in the same brand red."
     ],
     "rules": [
-      { "name": "The Two-Color Rule", "body": "Teal is calm and structural (it never asks for a click); terracotta is the only color that means 'act here' (buttons, phone numbers, hover underlines, urgent states). A non-interactive heading or text block turning terracotta is a bug.", "section": "colors" },
-      { "name": "The Truthful-Badge Rule", "body": "Every badge, stat, and status indicator is computed from a real fact (the live-status badge from real hours, gallery tags from the real trade shown) — never a static prop borrowed from the reference site.", "section": "components" }
+      { "name": "The Logo-Only-Color Rule", "body": "Every color on the site is either the client's own logo red (#be1e2f), the logo's charcoal ink (#231f20), a neutral off-white/grey, or a tint/shade of those — never a hue invented or borrowed from a competitor reference (no teal, no terracotta, no navy). If a new UI state needs a color, derive it from these two.", "section": "colors" },
+      { "name": "The Truthful-Badge Rule", "body": "Every badge, stat, and status indicator is computed from a real fact (the live-status badge from real hours — shown only when actually open, hidden otherwise — gallery tags from the real trade shown) — never a static prop borrowed from the reference site, and never a 'closed' announcement.", "section": "components" },
+      { "name": "The One-Phone-Per-Header Rule", "body": "The header shows the tel: phone pill exactly once for the current breakpoint: as the last nav-list item on desktop, inside the mobile drawer on small screens. Never add a second copy in header-actions next to the burger button — that duplicate was a shipped bug.", "section": "components" }
     ],
     "dos": [
-      "Do keep terracotta reserved for things the visitor can act on.",
+      "Do keep the brand red reserved for things the visitor can act on (buttons, phone numbers, hover states, the urgent-service card) — it is the client's own logo color, not a borrowed accent.",
+      "Do sample any new UI color from the logo (#be1e2f red, #231f20 charcoal) rather than a competitor reference or an invented hue.",
       "Do keep every badge/stat/status computed from a real fact, never borrowed from the reference.",
       "Do draw service-card icons in the site's own 24x24 line-icon grammar rather than an icon font.",
       "Do use real, unstaged job-site photography for the hero and gallery.",
-      "Do keep the phone number visible in the header and every CTA banner."
+      "Do keep the phone number visible in the header (once per breakpoint) and every CTA banner."
     ],
     "donts": [
       "Don't show a review score, star rating, or testimonial — none are verified.",
       "Don't invent a years-in-business or project-count statistic.",
-      "Don't let the live-status badge become decorative or drift from the real footer hours.",
-      "Don't mix teal and terracotta on the same interactive element as interchangeable accents.",
-      "Don't use pure black anywhere; the darkest surface is #1b2a30, always navy-warm."
+      "Don't let the live-status badge become decorative, drift from the real footer hours, or announce 'fermé' — hide it instead when closed.",
+      "Don't reintroduce a second brand hue (teal, terracotta, navy) — the palette is red + charcoal only, taken from the logo.",
+      "Don't use pure black anywhere; the darkest surface is #231f20, the logo's own charcoal.",
+      "Don't duplicate the phone-pill affordance twice in the same header state."
     ]
   }
 }

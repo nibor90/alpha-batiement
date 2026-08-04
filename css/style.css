@@ -1,9 +1,11 @@
 /*
   Alpha Bâtiment — feuille de style principale.
-  Direction : monde pinné par le client (référence dt-couverture-33.fr) —
-  fond papier clair, duo teal/terracotta, Montserrat + Open Sans, cartes
-  très arrondies à liseré icône, bandeaux et badges pilule. Le contenu et
-  les faits (services, ville, horaires) restent ceux d'Alpha Bâtiment ;
+  Direction : mise en page pinnée par le client (référence
+  dt-couverture-33.fr) — fond papier clair, cartes très arrondies à
+  liseré icône, bandeaux et badges pilule, Montserrat + Open Sans —
+  mais avec les couleurs du logo Alpha Bâtiment (rouge #be1e2f, noir
+  #231f20) plutôt que celles du site de référence. Le contenu et les
+  faits (services, ville, horaires) restent ceux d'Alpha Bâtiment ;
   aucune note, avis ou statistique non vérifiée n'est reprise du site
   de référence.
 */
@@ -27,23 +29,23 @@
 
 /* ---------- Tokens ---------- */
 :root {
-  --color-bg: #f5f7f8;
-  --color-bg-alt: #eaf1f2;
+  --color-bg: #f7f6f5;
+  --color-bg-alt: #efecec;
   --color-surface: #ffffff;
-  --color-ink: #1b2a30;
-  --color-ink-soft: #45565c;
-  --color-ink-muted: #6b7b82;
-  --color-line: #e3e8ea;
-  --color-line-strong: #c7d1d4;
-  --color-ink-inverse: #f5f7f8;
+  --color-ink: #231f20;
+  --color-ink-soft: #4c4748;
+  --color-ink-muted: #746f70;
+  --color-line: #e7e3e3;
+  --color-line-strong: #d2cdce;
+  --color-ink-inverse: #f7f6f5;
 
-  --color-primary: #5a9ea6;
-  --color-primary-dark: #437880;
-  --color-primary-lighter: #e8f4f6;
+  --color-primary: #be1e2f;
+  --color-primary-dark: #8f1522;
+  --color-primary-lighter: #fbe9eb;
 
-  --color-accent: #d4883a;
-  --color-accent-dark: #b8702c;
-  --color-accent-tint: #fbeee0;
+  --color-accent: #be1e2f;
+  --color-accent-dark: #8f1522;
+  --color-accent-tint: #fbe9eb;
 
   --font-display: "Montserrat", ui-sans-serif, system-ui, sans-serif;
   --font-body: "Open Sans", ui-sans-serif, system-ui, sans-serif;
@@ -66,8 +68,8 @@
   --radius-lg: 0.9rem;
   --radius-xl: 1.25rem;
 
-  --shadow-card: 0 1px 2px rgba(27, 42, 48, 0.06), 0 14px 32px -18px rgba(27, 42, 48, 0.22);
-  --shadow-lift: 0 2px 4px rgba(27, 42, 48, 0.1), 0 22px 44px -20px rgba(27, 42, 48, 0.3);
+  --shadow-card: 0 1px 2px rgba(35, 31, 32, 0.06), 0 14px 32px -18px rgba(35, 31, 32, 0.22);
+  --shadow-lift: 0 2px 4px rgba(35, 31, 32, 0.1), 0 22px 44px -20px rgba(35, 31, 32, 0.3);
 
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -332,7 +334,7 @@ p.wide {
   top: 0;
   z-index: 40;
   background: var(--color-surface);
-  box-shadow: 0 1px 0 var(--color-line), 0 8px 24px -20px rgba(27, 42, 48, 0.25);
+  box-shadow: 0 1px 0 var(--color-line), 0 8px 24px -20px rgba(35, 31, 32, 0.25);
 }
 
 .site-header__bar {
@@ -560,10 +562,6 @@ p.wide {
   .nav-toggle {
     display: inline-flex;
   }
-
-  .header-actions .phone-pill.header-phone {
-    display: none;
-  }
 }
 
 /* ---------- Hero (plein cadre, photo + dégradé) ---------- */
@@ -593,7 +591,7 @@ p.wide {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(115deg, rgba(27, 42, 48, 0.96) 0%, rgba(27, 42, 48, 0.86) 45%, rgba(67, 120, 128, 0.62) 100%);
+  background: linear-gradient(115deg, rgba(20, 17, 18, 0.95) 0%, rgba(35, 31, 32, 0.82) 45%, rgba(190, 30, 47, 0.55) 100%);
 }
 
 .hero__inner {
@@ -694,15 +692,6 @@ p.wide {
   background: #6bc78a;
   opacity: 0.45;
   animation: live-ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
-}
-
-.live-badge.is-closed .live-badge__dot,
-.live-badge.is-closed .live-badge__dot::before {
-  background: #b9c3c6;
-}
-
-.live-badge.is-closed .live-badge__dot::before {
-  animation: none;
 }
 
 @keyframes live-ping {
@@ -883,8 +872,8 @@ p.wide {
 }
 
 .service-card--urgent {
-  background: var(--color-ink);
-  border-color: var(--color-ink);
+  background: var(--color-accent);
+  border-color: var(--color-accent);
 }
 
 .service-card--urgent h3 {
@@ -892,16 +881,16 @@ p.wide {
 }
 
 .service-card--urgent .service-card__go {
-  color: #e5a75e;
+  color: #ffffff;
 }
 
 .service-card--urgent p {
-  color: #b8c8cc;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .service-card--urgent .service-card__icon {
-  background: rgba(255, 255, 255, 0.14);
-  color: #e5a75e;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
 }
 
 @media (max-width: 1000px) {
@@ -1052,7 +1041,7 @@ p.wide {
 }
 
 .cta-banner p {
-  color: #b8c8cc;
+  color: #c7c2c2;
 }
 
 .cta-banner__actions {
@@ -1094,7 +1083,7 @@ p.wide {
   left: var(--space-3);
   bottom: var(--space-3);
   z-index: 2;
-  background: rgba(27, 42, 48, 0.72);
+  background: rgba(35, 31, 32, 0.72);
   backdrop-filter: blur(3px);
   color: #ffffff;
   font-size: 0.72rem;
@@ -1459,7 +1448,7 @@ p.wide {
 /* ---------- Footer ---------- */
 .site-footer {
   background: var(--color-ink);
-  color: #b8c8cc;
+  color: #c7c2c2;
   padding: var(--space-8) 0 var(--space-6);
 }
 
@@ -1487,7 +1476,7 @@ p.wide {
 }
 
 .footer-grid p {
-  color: #9fb3b8;
+  color: #ada8a8;
   font-size: 0.9rem;
   max-width: 20rem;
 }
@@ -1504,7 +1493,7 @@ p.wide {
 
 .footer-col a {
   font-size: 0.9rem;
-  color: #9fb3b8;
+  color: #ada8a8;
   transition: color 0.2s var(--ease-out);
 }
 
@@ -1519,7 +1508,7 @@ p.wide {
   gap: var(--space-4);
   padding-top: var(--space-6);
   font-size: 0.8rem;
-  color: #748d92;
+  color: #8a8586;
   flex-wrap: wrap;
 }
 
