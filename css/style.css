@@ -1003,6 +1003,292 @@ p.wide {
   }
 }
 
+
+.coverage__note {
+  margin-top: var(--space-4);
+  color: var(--color-ink-soft);
+}
+
+.coverage__towns li {
+  transition: transform 0.18s var(--ease-out), box-shadow 0.18s var(--ease-out), border-color 0.18s var(--ease-out);
+}
+
+.coverage__towns li:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-card);
+}
+
+.coverage__towns a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.coverage-map {
+  position: relative;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-xl);
+  background:
+    radial-gradient(circle at 50% 50%, rgba(190, 30, 47, 0.08), transparent 42%),
+    linear-gradient(135deg, #ffffff 0%, var(--color-bg-alt) 100%);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  padding: var(--space-5);
+}
+
+.coverage-map svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 18rem;
+}
+
+.coverage-map__range-fill {
+  fill: url(#coverageGlow);
+}
+
+.coverage-map__range {
+  fill: none;
+  stroke: var(--color-primary);
+  stroke-width: 2.5;
+  stroke-dasharray: 7 8;
+}
+
+.coverage-map__road,
+.coverage-map__road--secondary {
+  fill: none;
+  stroke: rgba(35, 31, 32, 0.18);
+  stroke-width: 8;
+  stroke-linecap: round;
+}
+
+.coverage-map__road--secondary {
+  stroke-width: 5;
+  stroke: rgba(35, 31, 32, 0.1);
+}
+
+.coverage-map__point {
+  fill: var(--color-primary);
+  stroke: #ffffff;
+  stroke-width: 2.5;
+}
+
+.coverage-map__point--center {
+  fill: var(--color-ink);
+  stroke: var(--color-primary);
+  stroke-width: 3;
+}
+
+.coverage-map__label {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  fill: var(--color-ink);
+  text-anchor: end;
+  paint-order: stroke;
+  stroke: #ffffff;
+  stroke-width: 4px;
+  stroke-linejoin: round;
+}
+
+.coverage-map__label--right {
+  text-anchor: start;
+}
+
+
+.coverage-map--compact {
+  margin-top: var(--space-6);
+  padding: var(--space-4);
+}
+
+.coverage-map--compact svg {
+  min-height: 13rem;
+}
+
+.city-hero .hero__actions {
+  margin-top: var(--space-6);
+}
+
+.city-proof {
+  align-items: stretch;
+}
+
+.city-fact-card {
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-xl);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-6);
+}
+
+.city-fact-card h2 {
+  margin-bottom: var(--space-4);
+}
+
+.city-fact-card p + p {
+  margin-top: var(--space-3);
+}
+
+.city-service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+  margin-top: var(--space-6);
+}
+
+.city-service {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  padding: var(--space-5);
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out), border-color 0.2s var(--ease-out);
+}
+
+.city-service:hover {
+  transform: translateY(-3px);
+  border-color: transparent;
+  box-shadow: var(--shadow-lift);
+}
+
+.city-service .city-service__label {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  border-radius: 999px;
+  background: var(--color-primary-lighter);
+  color: var(--color-primary-dark);
+  padding: 0.22rem 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.city-service h3 {
+  font-size: 1rem;
+}
+
+.city-service p {
+  color: var(--color-ink-soft);
+  font-size: 0.9rem;
+  flex-grow: 1;
+}
+
+.city-service__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.city-service svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.city-seo-section {
+  padding: var(--space-8) 0;
+}
+
+.city-faq {
+  max-width: 48rem;
+}
+
+.city-faq h2 {
+  margin-bottom: var(--space-5);
+}
+
+.city-faq details {
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  padding: var(--space-4) var(--space-5);
+}
+
+.city-faq details + details {
+  margin-top: var(--space-3);
+}
+
+.city-faq summary {
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+.city-faq p {
+  margin-top: var(--space-3);
+  color: var(--color-ink-soft);
+}
+
+.city-nearby {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: var(--space-6);
+  align-items: start;
+  border-top: 1px solid var(--color-line);
+  padding-top: var(--space-7);
+}
+
+.city-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.city-links a {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--color-primary-lighter);
+  background: var(--color-primary-lighter);
+  color: var(--color-primary-dark);
+  border-radius: 999px;
+  padding: 0.45rem 0.95rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.18s var(--ease-out), border-color 0.18s var(--ease-out);
+}
+
+.city-links a:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-primary);
+}
+
+.legal-list {
+  display: grid;
+  gap: var(--space-2);
+  margin: var(--space-4) 0 var(--space-6);
+  padding: var(--space-5);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+
+@media (max-width: 900px) {
+  .city-service-grid,
+  .city-nearby {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .coverage-map {
+    padding: var(--space-3);
+  }
+
+  .coverage-map__label {
+    font-size: 0.68rem;
+  }
+}
+
 /* ---------- Partners ---------- */
 .partners {
   display: flex;
