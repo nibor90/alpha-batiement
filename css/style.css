@@ -1,8 +1,8 @@
 /*
-  Alpha Bâtiment — feuille de style principale.
+  Alpha Bâtiment, feuille de style principale.
   Direction : mise en page pinnée par le client (référence
-  dt-couverture-33.fr) — fond papier clair, cartes très arrondies à
-  liseré icône, bandeaux et badges pilule, Montserrat + Open Sans —
+  dt-couverture-33.fr) : fond papier clair, cartes très arrondies à
+  liseré icône, bandeaux et badges pilule, Montserrat + Open Sans,
   mais avec les couleurs du logo Alpha Bâtiment (rouge #be1e2f, noir
   #231f20) plutôt que celles du site de référence. Le contenu et les
   faits (services, ville, horaires) restent ceux d'Alpha Bâtiment ;
@@ -114,6 +114,12 @@ body {
 img {
   max-width: 100%;
   display: block;
+}
+
+/* Leaflet tiles break when global img { max-width: 100% } applies */
+.leaflet-container img {
+  max-width: none;
+  max-height: none;
 }
 
 a {
@@ -974,6 +980,10 @@ p.wide {
   line-height: 1;
 }
 
+.proof__mark::before {
+  content: "•";
+}
+
 .proof__item h3 {
   margin-bottom: var(--space-2);
 }
@@ -1070,81 +1080,48 @@ p.wide {
   position: relative;
   border: 1px solid var(--color-line);
   border-radius: var(--radius-xl);
-  background:
-    radial-gradient(circle at 50% 50%, rgba(190, 30, 47, 0.08), transparent 42%),
-    linear-gradient(135deg, #ffffff 0%, var(--color-bg-alt) 100%);
   box-shadow: var(--shadow-card);
   overflow: hidden;
-  padding: var(--space-5);
 }
 
-.coverage-map svg {
-  display: block;
+.coverage-map--osm {
+  height: 22rem;
+  min-height: 22rem;
+  background: var(--color-surface);
+}
+
+.coverage-map--osm.leaflet-container {
   width: 100%;
-  height: auto;
-  min-height: 18rem;
+  height: 22rem;
+  font-family: var(--font-body);
+  z-index: 0;
 }
 
-.coverage-map__range-fill {
-  fill: url(#coverageGlow);
+.coverage-map--error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  color: var(--color-ink-soft);
+  font-size: 0.95rem;
+  text-align: center;
 }
 
-.coverage-map__range {
-  fill: none;
-  stroke: var(--color-primary);
-  stroke-width: 2.5;
-  stroke-dasharray: 7 8;
+.coverage-map--osm .leaflet-control-attribution {
+  font-size: 0.65rem;
+  background: rgba(255, 255, 255, 0.88);
 }
-
-.coverage-map__road,
-.coverage-map__road--secondary {
-  fill: none;
-  stroke: rgba(35, 31, 32, 0.18);
-  stroke-width: 8;
-  stroke-linecap: round;
-}
-
-.coverage-map__road--secondary {
-  stroke-width: 5;
-  stroke: rgba(35, 31, 32, 0.1);
-}
-
-.coverage-map__point {
-  fill: var(--color-primary);
-  stroke: #ffffff;
-  stroke-width: 2.5;
-}
-
-.coverage-map__point--center {
-  fill: var(--color-ink);
-  stroke: var(--color-primary);
-  stroke-width: 3;
-}
-
-.coverage-map__label {
-  font-family: var(--font-display);
-  font-size: 0.78rem;
-  font-weight: 700;
-  fill: var(--color-ink);
-  text-anchor: end;
-  paint-order: stroke;
-  stroke: #ffffff;
-  stroke-width: 4px;
-  stroke-linejoin: round;
-}
-
-.coverage-map__label--right {
-  text-anchor: start;
-}
-
 
 .coverage-map--compact {
   margin-top: var(--space-6);
-  padding: var(--space-4);
 }
 
-.coverage-map--compact svg {
-  min-height: 13rem;
+.coverage-map--compact.coverage-map--osm {
+  height: 16rem;
+}
+
+.coverage-map--compact.coverage-map--osm.leaflet-container {
+  height: 16rem;
 }
 
 .city-hero .hero__actions {
@@ -1316,31 +1293,22 @@ p.wide {
 }
 
 @media (max-width: 640px) {
-  .coverage-map {
-    padding: var(--space-3);
+  .coverage-map--osm {
+    height: 18rem;
   }
 
-  .coverage-map svg {
-    min-height: 15rem;
-  }
-
-  .coverage-map__label {
-    font-size: 0.68rem;
+  .coverage-map--compact.coverage-map--osm {
+    height: 14rem;
   }
 }
 
 @media (max-width: 400px) {
-  .coverage-map {
-    padding: var(--space-2);
+  .coverage-map--osm {
+    height: 16rem;
   }
 
-  .coverage-map svg {
-    min-height: 12.5rem;
-  }
-
-  .coverage-map__label {
-    font-size: 0.72rem;
-    stroke-width: 5px;
+  .coverage-map--compact.coverage-map--osm {
+    height: 13rem;
   }
 }
 

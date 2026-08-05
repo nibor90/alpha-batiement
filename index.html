@@ -1,9 +1,9 @@
 <!--
 THESIS: Prove local craftsmanship at a confident, modern trade-site register
-— the visitor should trust Alpha Bâtiment as fast as they would trust the
+- the visitor should trust Alpha Bâtiment as fast as they would trust the
 best competitor site in the region, without losing the real photography.
 OWN-WORLD: Off-white ground, charcoal ink, a single brand red for every
-call-to-action and accent — both taken directly from the client's own
+call-to-action and accent, both taken directly from the client's own
 logo (rouge #be1e2f, noir #231f20), never an invented hue; Montserrat
 display (700/800) + Open Sans body; generously rounded icon-badge
 service cards, pill badges and buttons, a full-bleed photo hero with a
@@ -14,7 +14,7 @@ and trust pills, understands the seven trades at a glance as icon cards,
 and calls or requests a devis.
 FIRST VIEWPORT: full-bleed photo hero (camion nacelle) with dark gradient
 overlay, live-status badge, headline + lede + devis/phone actions on top.
-FORM: user-pinned direction (brief beats the roll) — reference
+FORM: user-pinned direction (brief beats the roll), reference
 https://dt-couverture-33.fr for its layout/type/card/badge vocabulary
 (full-bleed hero, icon-badge cards, pill trust badges), with Alpha
 Bâtiment's own logo colors (rouge #be1e2f, noir #231f20) per the
@@ -30,16 +30,17 @@ the finish review, the verdict, and DESIGN.md.
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Couvreur à Pazayac & Brive-la-Gaillarde — Travaux de toiture | Alpha Bâtiment</title>
+<title>Couvreur à Pazayac & Brive-la-Gaillarde | Travaux de toiture | Alpha Bâtiment</title>
 <meta name="description" content="Alpha Bâtiment, couvreur artisan à Pazayac, intervient autour de Brive-la-Gaillarde pour vos travaux de couverture (toiture), zinguerie, isolation et façades. Camion nacelle, devis gratuit, urgence fuite de toiture." />
 <link rel="canonical" href="https://alpha-batiement.vercel.app/" />
 <link rel="icon" href="assets/brand/favicon-192.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="assets/brand/favicon-192.png" />
-<meta property="og:title" content="Alpha Bâtiment — Couvreur à Pazayac & Brive-la-Gaillarde" />
+<meta property="og:title" content="Alpha Bâtiment | Couvreur à Pazayac & Brive-la-Gaillarde" />
 <meta property="og:description" content="Travaux de couverture (toiture), zinguerie, isolation et façades à Pazayac et alentours, avec camion nacelle." />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="assets/gallery/toiture-brive-vue-eloignee.jpg" />
 <link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -147,7 +148,7 @@ the finish review, the verdict, and DESIGN.md.
           <span data-open-badge-text>Horaires en cours de chargement…</span>
         </span>
         <h1>Couvreur à Pazayac &amp; Brive-la-Gaillarde.</h1>
-        <p class="lede">Alpha Bâtiment réalise vos travaux de couverture — toiture en tuiles ou en ardoises — à Pazayac et dans les environs de Brive-la-Gaillarde, ainsi que la zinguerie, l'isolation et les façades — avec un camion nacelle qui nous permet de travailler en hauteur sans échafaudage.</p>
+        <p class="lede">Alpha Bâtiment réalise vos travaux de couverture (toiture en tuiles ou en ardoises) à Pazayac et dans les environs de Brive-la-Gaillarde, ainsi que la zinguerie, l'isolation et les façades, avec un camion nacelle qui nous permet de travailler en hauteur sans échafaudage.</p>
         <div class="hero__actions">
           <a class="btn btn-primary" href="contact.html">
             Demander un devis
@@ -188,16 +189,6 @@ the finish review, the verdict, and DESIGN.md.
     </div>
 
     <div class="service-grid stagger-list">
-      <a class="service-card service-card--flagship" href="travaux-de-couverture.html">
-        <span class="service-card__badge">Notre spécialité</span>
-        <span class="service-card__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13 12 5l9 8"/><path d="M5.5 12v7.5h13V12"/><path d="M9 19.5V15h6v4.5"/></svg>
-        </span>
-        <h3>Travaux de couverture</h3>
-        <p>Réfection, rénovation et création de toitures : notre cœur de métier, en tuiles comme en ardoises, à Pazayac et autour de Brive-la-Gaillarde.</p>
-        <span class="service-card__go">Découvrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span>
-      </a>
-
       <a class="service-card service-card--urgent" href="urgence-fuite-toiture.html">
         <span class="service-card__icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3.5 4 6 7.4 6 10.5A6 6 0 0 1 6 13.5C6 10.4 8.5 7 12 3Z"/></svg>
@@ -205,6 +196,15 @@ the finish review, the verdict, and DESIGN.md.
         <h3>Urgence fuite de toiture</h3>
         <p>Une infiltration, une tuile envolée après la tempête ? Nous intervenons pour bâcher, diagnostiquer et réparer.</p>
         <span class="service-card__go">Appeler maintenant <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span>
+      </a>
+
+      <a class="service-card service-card--flagship" href="travaux-de-couverture.html">
+        <span class="service-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13 12 5l9 8"/><path d="M5.5 12v7.5h13V12"/><path d="M9 19.5V15h6v4.5"/></svg>
+        </span>
+        <h3>Travaux de couverture</h3>
+        <p>Réfection, rénovation et création de toitures : notre cœur de métier, en tuiles comme en ardoises, à Pazayac et autour de Brive-la-Gaillarde.</p>
+        <span class="service-card__go">Découvrir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span>
       </a>
 
       <a class="service-card" href="travaux-de-zinguerie.html">
@@ -254,7 +254,7 @@ the finish review, the verdict, and DESIGN.md.
     </div>
   </section>
 
-  <section class="section--alt">
+  <section class="section section--alt">
     <div class="container">
       <div class="proof reveal">
         <div class="proof__media">
@@ -264,21 +264,21 @@ the finish review, the verdict, and DESIGN.md.
           <h2 style="margin-bottom: var(--space-2);">Pourquoi Alpha Bâtiment</h2>
           <p class="lede" style="margin-bottom: var(--space-2);">Ce qui change concrètement pour votre chantier.</p>
           <div class="proof__item">
-            <span class="proof__mark">—</span>
+            <span class="proof__mark" aria-hidden="true"></span>
             <div>
               <h3>La couverture, notre cœur de métier</h3>
-              <p>Réfection, rénovation ou création de toiture, en tuiles comme en ardoises — avec la zinguerie, l'isolation et les façades gérées par la même équipe, du diagnostic à la finition.</p>
+              <p>Réfection, rénovation ou création de toiture, en tuiles comme en ardoises, avec la zinguerie, l'isolation et les façades gérées par la même équipe, du diagnostic à la finition.</p>
             </div>
           </div>
           <div class="proof__item">
-            <span class="proof__mark">—</span>
+            <span class="proof__mark" aria-hidden="true"></span>
             <div>
               <h3>Le camion nacelle</h3>
               <p>Accès direct en hauteur, sans montage d'échafaudage : chantiers de toiture plus rapides et plus sûrs, y compris sur les façades difficiles d'accès.</p>
             </div>
           </div>
           <div class="proof__item">
-            <span class="proof__mark">—</span>
+            <span class="proof__mark" aria-hidden="true"></span>
             <div>
               <h3>Ancrés en Dordogne et en Corrèze</h3>
               <p>Basés à Pazayac, nous connaissons les toitures traditionnelles du Périgord et de la Corrèze et les contraintes du bâti ancien.</p>
@@ -290,8 +290,8 @@ the finish review, the verdict, and DESIGN.md.
   </section>
 
   <section class="container section" id="zone-intervention">
-    <div class="coverage reveal">
-      <div class="coverage__content">
+    <div class="coverage">
+      <div class="coverage__content reveal">
         <h2>Une zone d'intervention autour de Brive-la-Gaillarde</h2>
         <p class="lede">Nous intervenons dans un rayon d'environ 30 km autour de Brive-la-Gaillarde, depuis Pazayac, pour vos travaux de couverture, zinguerie, isolation et façades.</p>
         <p class="coverage__note">Ces pages locales permettent de retrouver rapidement Alpha Bâtiment près de chez vous, sans multiplier de fausses promesses : les prestations restent les mêmes, seul le secteur change.</p>
@@ -324,24 +324,7 @@ the finish review, the verdict, and DESIGN.md.
         </ul>
       </div>
       <div>
-        <div class="coverage-map" role="img" aria-label="Carte schématique de la zone d'intervention : centre Brive-la-Gaillarde, rayon d'environ 30 kilomètres">
-          <svg viewBox="0 0 520 380" aria-hidden="true" focusable="false">
-            <defs>
-              <radialGradient id="coverageGlow" cx="50%" cy="50%" r="60%">
-                <stop offset="0%" stop-color="rgba(190,30,47,0.18)" />
-                <stop offset="100%" stop-color="rgba(190,30,47,0.02)" />
-              </radialGradient>
-            </defs>
-            <path class="coverage-map__road" d="M82 246 C158 196 207 206 260 190 C316 173 370 130 446 92" />
-            <path class="coverage-map__road coverage-map__road--secondary" d="M128 92 C182 126 213 153 260 190 C298 220 326 260 398 312" />
-            <circle class="coverage-map__range" cx="260" cy="190" r="126" />
-            <circle class="coverage-map__range-fill" cx="260" cy="190" r="126" />
-            <g class="coverage-map__pin is-center">
-              <circle class="coverage-map__point coverage-map__point--center" cx="260" cy="190" r="8" />
-              <text class="coverage-map__label" x="248" y="180">Brive-la-Gaillarde</text>
-            </g>
-          </svg>
-        </div>
+        <div class="coverage-map coverage-map--osm" data-coverage-map aria-label="Carte OpenStreetMap de la zone d'intervention : centre Brive-la-Gaillarde, rayon d'environ 30 kilomètres"></div>
       </div>
     </div>
   </section>
@@ -398,7 +381,7 @@ the finish review, the verdict, and DESIGN.md.
         <div class="footer-brand">
           <img src="assets/brand/logo-rouge-blanc.png" alt="" />
         </div>
-        <p>Couvreur artisan à Pazayac, spécialiste des travaux de couverture (toiture, zinguerie, isolation, façades) en Dordogne et Corrèze — un seul interlocuteur, du diagnostic à la finition.</p>
+        <p>Couvreur artisan à Pazayac, spécialiste des travaux de couverture (toiture, zinguerie, isolation, façades) en Dordogne et Corrèze, avec un seul interlocuteur, du diagnostic à la finition.</p>
       </div>
       <div class="footer-col">
         <h4>Prestations</h4>
@@ -439,6 +422,7 @@ the finish review, the verdict, and DESIGN.md.
   </div>
 </footer>
 
+<script src="assets/vendor/leaflet/leaflet.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

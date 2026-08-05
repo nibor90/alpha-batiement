@@ -151,7 +151,7 @@
     el.textContent = new Date().getFullYear();
   });
 
-  /* Live "ouvert" badge — computed from the real declared hours
+  /* Live "ouvert" badge, computed from the real declared hours
      (Lun-Sam 8h-18h, dimanche fermé). Only ever announces "ouvert" :
      when the business is closed, the badge is simply hidden rather
      than displaying a discouraging "fermé" message. */
@@ -172,5 +172,106 @@
         textEl.textContent = "Ouvert maintenant · Lun–Sam 8h–18h";
       }
     });
+  }
+
+  /* OpenStreetMap coverage maps (Leaflet + cercle 30 km) */
+  var coverageMapEls = document.querySelectorAll("[data-coverage-map]");
+  if (coverageMapEls.length) {
+    var BRIVE_CENTER = [45.158891, 1.533059];
+    var COVERAGE_RADIUS_M = 30000;
+
+    function refreshCoverageMap(map, circle) {
+      map.invalidateSize({ animate: false });
+      map.fitBounds(circle.getBounds(), { padding: [16, 16] });
+    }
+
+    function scheduleRefresh(map, circle) {
+      refreshCoverageMap(map, circle);
+      requestAnimationFrame(function () {
+        refreshCoverageMap(map, circle);
+      });
+      window.setTimeout(function () {
+        refreshCoverageMap(map, circle);
+      }, 250);
+      window.setTimeout(function () {
+        refreshCoverageMap(map, circle);
+      }, 900);
+    }
+
+    function createCoverageMap(el) {
+      if (el.dataset.coverageMapReady === "true") return;
+
+      if (typeof L === "undefined") {
+        el.classList.add("coverage-map--error");
+        el.textContent = "Carte momentanément indisponible.";
+        return;
+      }
+
+      var map = L.map(el, {
+        scrollWheelZoom: false,
+        attributionControl: true
+      });
+
+      /* Leaflet needs a view (center + zoom) before any layer can be
+         added, otherwise adding a circle/marker throws
+         "Cannot read properties of undefined (reading 'layerPointToLatLng')"
+         and the whole map fails to render, tiles included. */
+      map.setView(BRIVE_CENTER, 9);
+
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+      }).addTo(map);
+
+      var circle = L.circle(BRIVE_CENTER, {
+        color: "#be1e2f",
+        weight: 2.5,
+        fillColor: "#be1e2f",
+        fillOpacity: 0.14,
+        radius: COVERAGE_RADIUS_M
+      }).addTo(map);
+
+      L.circleMarker(BRIVE_CENTER, {
+        radius: 7,
+        color: "#231f20",
+        weight: 2,
+        fillColor: "#be1e2f",
+        fillOpacity: 1
+      }).addTo(map).bindTooltip("Brive-la-Gaillarde", {
+        direction: "top",
+        offset: [0, -8]
+      });
+
+      el.dataset.coverageMapReady = "true";
+
+      map.whenReady(function () {
+        scheduleRefresh(map, circle);
+      });
+
+      if ("IntersectionObserver" in window) {
+        var visibilityObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              scheduleRefresh(map, circle);
+            }
+          });
+        }, { threshold: 0.01, rootMargin: "40px 0px" });
+        visibilityObserver.observe(el);
+      }
+
+      window.addEventListener("resize", function () {
+        scheduleRefresh(map, circle);
+      });
+    }
+
+    function bootCoverageMaps() {
+      coverageMapEls.forEach(createCoverageMap);
+    }
+
+    if (document.readyState === "complete") {
+      bootCoverageMaps();
+    } else {
+      window.addEventListener("load", bootCoverageMaps);
+    }
   }
 })();

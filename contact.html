@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Devis toiture & couverture — Contact Alpha Bâtiment | Pazayac</title>
-<meta name="description" content="Demandez votre devis gratuit de couverture (toiture), zinguerie, isolation ou façades. Alpha Bâtiment, couvreur artisan à Pazayac. 06 38 96 16 26 — 272 Chem. de l'Ancienne Forge, 24120 Pazayac." />
+<title>Devis toiture & couverture | Contact Alpha Bâtiment | Pazayac</title>
+<meta name="description" content="Demandez votre devis gratuit de couverture (toiture), zinguerie, isolation ou façades. Alpha Bâtiment, couvreur artisan à Pazayac. 06 38 96 16 26 · 272 Chem. de l'Ancienne Forge, 24120 Pazayac." />
 <link rel="canonical" href="https://alpha-batiement.vercel.app/contact.html" />
 <link rel="icon" href="assets/brand/favicon-192.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="assets/brand/favicon-192.png" />
 <link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -93,7 +94,7 @@
 <main id="main">
   <section class="container page-hero">
     <div class="breadcrumb"><a href="index.html">Accueil</a><span>/</span><span>Contact</span></div>
-    <h1>Devis toiture &amp; couverture — Contactez-nous</h1>
+    <h1>Devis toiture &amp; couverture : contactez-nous</h1>
     <p class="lede">Décrivez votre projet de couverture ou tout autre travaux (zinguerie, isolation, façades), nous revenons vers vous avec un devis clair. Pour une urgence fuite de toiture, appelez directement.</p>
   </section>
 
@@ -131,24 +132,7 @@
               </div>
             </div>
           </div>
-          <div class="coverage-map coverage-map--compact" role="img" aria-label="Carte schématique de la zone d'intervention : centre Brive-la-Gaillarde, rayon d'environ 30 kilomètres">
-          <svg viewBox="0 0 520 380" aria-hidden="true" focusable="false">
-            <defs>
-              <radialGradient id="coverageGlow" cx="50%" cy="50%" r="60%">
-                <stop offset="0%" stop-color="rgba(190,30,47,0.18)" />
-                <stop offset="100%" stop-color="rgba(190,30,47,0.02)" />
-              </radialGradient>
-            </defs>
-            <path class="coverage-map__road" d="M82 246 C158 196 207 206 260 190 C316 173 370 130 446 92" />
-            <path class="coverage-map__road coverage-map__road--secondary" d="M128 92 C182 126 213 153 260 190 C298 220 326 260 398 312" />
-            <circle class="coverage-map__range" cx="260" cy="190" r="126" />
-            <circle class="coverage-map__range-fill" cx="260" cy="190" r="126" />
-            <g class="coverage-map__pin is-center">
-              <circle class="coverage-map__point coverage-map__point--center" cx="260" cy="190" r="8" />
-              <text class="coverage-map__label" x="248" y="180">Brive-la-Gaillarde</text>
-            </g>
-          </svg>
-        </div>
+          <div class="coverage-map coverage-map--osm coverage-map--compact" data-coverage-map aria-label="Carte OpenStreetMap de la zone d'intervention : centre Brive-la-Gaillarde, rayon d'environ 30 kilomètres"></div>
         </div>
       </div>
 
@@ -157,7 +141,7 @@
         <p class="lede" style="margin-bottom: var(--space-6);">Réponse par e-mail ou par téléphone selon votre préférence.</p>
 
         <form id="contact-form" action="https://formsubmit.co/alphabatiment.fr@gmail.com" method="POST">
-          <input type="hidden" name="_subject" value="Nouvelle demande de devis — site Alpha Bâtiment" />
+          <input type="hidden" name="_subject" value="Nouvelle demande de devis - site Alpha Bâtiment" />
           <input type="hidden" name="_next" value="merci.html" />
           <input type="hidden" name="_template" value="table" />
           <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
@@ -219,7 +203,7 @@
     <div class="footer-grid">
       <div>
         <div class="footer-brand"><img src="assets/brand/logo-rouge-blanc.png" alt="" /></div>
-        <p>Couvreur artisan à Pazayac, spécialiste des travaux de couverture (toiture, zinguerie, isolation, façades) en Dordogne et Corrèze — un seul interlocuteur, du diagnostic à la finition.</p>
+        <p>Couvreur artisan à Pazayac, spécialiste des travaux de couverture (toiture, zinguerie, isolation, façades) en Dordogne et Corrèze, avec un seul interlocuteur, du diagnostic à la finition.</p>
       </div>
       <div class="footer-col">
         <h4>Prestations</h4>
@@ -259,6 +243,7 @@
     </div>
   </div>
 </footer>
+<script src="assets/vendor/leaflet/leaflet.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
