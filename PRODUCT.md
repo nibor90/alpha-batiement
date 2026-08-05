@@ -71,6 +71,7 @@ No verified customer testimonials, case-study text, pricing, or certifications e
 
 - 10 real project photos from the incumbent site's "Nos Réalisations" gallery, saved in `assets/gallery/realisation-01.jpg` … `realisation-10.jpg`. These are genuine Alpha Bâtiment job-site photos and are the preferred imagery source.
 - All other imagery on the incumbent site (hero backgrounds, service tile backgrounds) is unlicensed-to-us AdobeStock stock photography, not company property — do not carry it over. Where the 10 real photos are insufficient for a given slot (e.g., a hero image or a specific service illustration with no matching real photo), generate a new image rather than reusing stock photography of unknown license.
+- `assets/gallery/toiture-brive-vue-eloignee.jpg` (2026-08-05): AI-generated per the rule above — none of the 10 real job photos offered a wide, distant rooftop view. Used only as the homepage hero background (not a claimed real job site); its `alt` text describes it honestly as a general view of the area's traditional roofing rather than a specific address.
 - Partner/material logos in `assets/partners/`.
 
 ## Product Principles
@@ -79,6 +80,8 @@ No verified customer testimonials, case-study text, pricing, or certifications e
 2. Multi-trade breadth (roofing + zinc + insulation + facades) is the core pitch; every service must be easy to find, not buried under one "featured" trade.
 3. Local, factual trust signals (coverage towns, real job photos, material-brand partnerships, direct owner contact) replace generic stock-photo trust theater.
 4. Never invent numbers, reviews, or claims the owner hasn't confirmed.
+
+**Superseded content-strategy principle (2026-08-05, couverture-flagship pass):** the owner asked that the whole site's SEO be aimed squarely at "couvreur" (roofer) intent — ranking for "couvreur + town name" across the entire 30km service area is now the single most important SEO outcome. Principle 2 above is refined, not reversed, for copy/SEO purposes: **Travaux de Couverture is now the flagship trade** — it leads in titles, meta descriptions, H1s, nav/footer ordering, homepage/prestations card ordering, and structured data — while the other six trades remain fully listed, linked, and each keeps its own complete dedicated page (nothing is removed or hidden, they are just no longer positioned as equal-weight headline copy). Concretely: nav dropdown and footer service list now lead with Couverture; `travaux-de-couverture.html` became the deepest, most SEO-built-out service page (FAQ + schema + internal links to top city pages); every page that lacked structured data (home, prestations, all 7 service pages, contact, réalisations) now carries LocalBusiness/RoofingContractor + Service + BreadcrumbList JSON-LD, matching the pattern already used on the 25 city pages. As always, no invented stats, reviews, prices, or unverified material claims were introduced to support this.
 
 ## Accessibility & Inclusion
 

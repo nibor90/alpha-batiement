@@ -15,7 +15,7 @@
   /* Mobile "Prestations" accordion (desktop uses hover/focus dropdown) */
   document.querySelectorAll(".nav-has-menu > .nav-link").forEach(function (link) {
     link.addEventListener("click", function (event) {
-      if (window.matchMedia("(max-width: 900px)").matches) {
+      if (window.matchMedia("(max-width: 1080px)").matches) {
         event.preventDefault();
         var parent = link.parentElement;
         var wasOpen = parent.classList.contains("is-open");
