@@ -278,6 +278,10 @@ p.wide {
   align-items: flex-end;
   gap: var(--space-6);
   margin-bottom: var(--space-7);
+  /* Without wrap, the ghost CTA can't shrink on narrow screens and
+     overflows past the viewport edge, forcing the whole page to scroll
+     horizontally (same fix already applied to .cta-banner / .footer-bottom). */
+  flex-wrap: wrap;
 }
 
 .header-row .lede {
