@@ -146,6 +146,10 @@ figure {
 button {
   font-family: inherit;
   cursor: pointer;
+  /* Without this, unstyled buttons fall back to the browser's own
+     control color (visible as a stray blue tint on some mobile
+     browsers) instead of the page's ink color. */
+  color: inherit;
 }
 
 input,
@@ -228,11 +232,16 @@ p.wide {
 }
 
 .section {
-  padding: var(--space-9) 0;
+  /* padding-top/bottom only: many sections also carry .container, whose
+     horizontal gutter must survive (a `padding: Y 0` shorthand here would
+     zero it out again on every combined element). */
+  padding-top: var(--space-9);
+  padding-bottom: var(--space-9);
 }
 
 .section--tight {
-  padding: var(--space-7) 0;
+  padding-top: var(--space-7);
+  padding-bottom: var(--space-7);
 }
 
 .section--alt {
@@ -252,7 +261,8 @@ p.wide {
 
 @media (max-width: 720px) {
   .section {
-    padding: var(--space-7) 0;
+    padding-top: var(--space-7);
+    padding-bottom: var(--space-7);
   }
 }
 
@@ -348,7 +358,11 @@ p.wide {
   align-items: center;
   justify-content: space-between;
   gap: var(--space-5);
-  padding: var(--space-4) 0;
+  /* padding-top/bottom only: this element also carries .container, whose
+     horizontal gutter must survive (a `padding: Y 0` shorthand here would
+     zero it out again). */
+  padding-top: var(--space-4);
+  padding-bottom: var(--space-4);
 }
 
 .brand {
@@ -502,6 +516,11 @@ p.wide {
   border: 1px solid var(--color-line-strong);
   border-radius: var(--radius-sm);
   padding: 0.5rem 0.6rem;
+  /* Unstyled <button> falls back to the browser's own control color
+     (often a blue system tint on mobile) instead of inheriting the
+     page's ink color, since `color: inherit` isn't part of the UA
+     button reset. State it explicitly in the brand red. */
+  color: var(--color-primary);
 }
 
 .nav-toggle svg {
@@ -1473,7 +1492,8 @@ p.wide {
   grid-template-columns: 1fr 1fr;
   gap: var(--space-8);
   align-items: center;
-  padding: var(--space-7) 0 var(--space-8);
+  padding-top: var(--space-7);
+  padding-bottom: var(--space-8);
 }
 
 .detail-hero__media {
@@ -1926,7 +1946,8 @@ p.wide {
 }
 
 .page-hero {
-  padding: var(--space-7) 0 var(--space-6);
+  padding-top: var(--space-7);
+  padding-bottom: var(--space-6);
 }
 
 .page-hero p.lede {
