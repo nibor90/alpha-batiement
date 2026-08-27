@@ -762,6 +762,23 @@ p.wide {
   box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
   animation: phone-pulse 1.8s ease-out infinite;
   z-index: 1;
+  text-align: left;
+  line-height: 1.2;
+}
+
+.hero__phone-btn .phone-number {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.hero__phone-btn .phone-caption {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  opacity: 0.85;
 }
 
 .hero__phone-btn:hover {
